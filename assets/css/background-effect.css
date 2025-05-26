@@ -15,7 +15,7 @@
   border-radius: 2px;
   opacity: 0;
   transition: opacity 0.3s ease, background-color 0.2s ease, box-shadow 0.2s ease;
-  z-index: 1;
+  z-index: 0; /* 从 z-index: 1 改为 z-index: 0 */
   pointer-events: none;
 }
 
