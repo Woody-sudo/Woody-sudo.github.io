@@ -82,23 +82,41 @@ ul {
   top: 0;
   left: 0;
   z-index: 1000;
-  background-color: rgba(var(--bg-color-rgb), 0.95); /* 增加不透明度 */
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15); /* 增强阴影 */
+  background-color: rgba(var(--bg-color-rgb), 0.85); /* 降低不透明度，增加透明感 */
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1); /* 稍微减少阴影强度 */
   transition: all 0.3s ease;
-  backdrop-filter: blur(15px); /* 增强背景模糊 */
-  -webkit-backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* 添加底部边框 */
+  backdrop-filter: blur(20px) saturate(180%); /* 增强背景模糊和饱和度 */
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* 稍微增强边框透明度 */
 }
 
 /* 确保在不同主题下有正确的背景色变量 */
 [data-theme="light"] .site-header {
   --bg-color-rgb: 255, 255, 255;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: rgba(255, 255, 255, 0.8); /* 明亮主题下更透明 */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 [data-theme="dark"] .site-header {
   --bg-color-rgb: 18, 18, 18;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(18, 18, 18, 0.85); /* 暗黑主题下保持较好的可读性 */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* 可选：添加滚动时的动态效果 */
+.site-header.scrolled {
+  background-color: rgba(var(--bg-color-rgb), 0.95);
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .site-header.scrolled {
+  background-color: rgba(255, 255, 255, 0.92);
+}
+
+[data-theme="dark"] .site-header.scrolled {
+  background-color: rgba(18, 18, 18, 0.92);
 }
 
 .site-header .container {
