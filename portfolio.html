@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Woody-sudo - ML Researcher & Developer with Physics Background">
+  <title>Woody-sudo | Portfolio</title>
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/background-effect.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+<body>
+  <!-- Background Animation -->
+  <div id="background-animation"></div>
+  
+  <!-- Header with Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html"><span>Woody</span>-Sudo</a>
+      </div>
+      <nav class="main-nav">
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="portfolio.html" class="active">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" aria-label="Toggle dark/light mode">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Portfolio Header -->
+  <section class="portfolio-header">
+    <div class="container">
+      <h1 class="page-title">My Projects</h1>
+      <p class="page-subtitle">Showcasing my work in machine learning, development, and academic tools</p>
+    </div>
+  </section>
+
+  <!-- Portfolio Projects -->
+  <section class="portfolio-projects">
+    <div class="container">
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ml">Machine Learning</button>
+        <button class="filter-btn" data-filter="dev">Development</button>
+        <button class="filter-btn" data-filter="academic">Academic</button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- ML Realization Project -->
+        <div class="project-item" id="project1" data-category="ml">
+          <div class="project-header">
+            <img src="assets/images/ml-project.jpg" alt="ML Realization Project">
+          </div>
+          <div class="project-body">
+            <h2>ML Realization</h2>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>TensorFlow</span>
+              <span>Docker</span>
+            </div>
+            <div class="project-desc">
+              <p>A comprehensive implementation of various machine learning algorithms from scratch, with focus on neural networks and deep learning architectures.</p>
+              
+              <h3>Project Highlights</h3>
+              <ul>
+                <li>Built neural network layers and activation functions from fundamental principles</li>
+                <li>Implemented gradient descent optimization with various approaches</li>
+                <li>Created visualization tools to understand model training and decision boundaries</li>
+                <li>Containerized the entire environment for reproducible experiments</li>
+              </ul>
+              
+              <h3>Technologies Used</h3>
+              <p>Python, NumPy, TensorFlow, Matplotlib, Docker, Jupyter Notebooks</p>
+              
+              <div class="project-links">
+                <a href="https://github.com/Woody-sudo/ml-realization" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                  <i class="fab fa-github"></i> View on GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Yuque KaTeX Project -->
+        <div class="project-item" id="project2" data-category="academic">
+          <div class="project-header">
+            <img src="assets/images/katex-project.jpg" alt="Yuque KaTeX Project">
+          </div>
+          <div class="project-body">
+            <h2>Yuque motivated KaTeX printing Notes</h2>
+            <div class="project-tags">
+              <span>LaTeX</span>
+              <span>KaTeX</span>
+              <span>Python</span>
+            </div>
+            <div class="project-desc">
+              <p>A specialized system for generating beautifully formatted academic notes using KaTeX rendering inspired by Yuque's document format. Perfect for researchers and students who need to create, share, and print complex mathematical content.</p>
+              
+              <h3>Project Highlights</h3>
+              <ul>
+                <li>Developed a custom template system for academic papers and notes</li>
+                <li>Created a Python-based converter to transform Yuque documents to KaTeX</li>
+                <li>Built an automatic reference management system</li>
+                <li>Designed print-optimized stylesheets for mathematical notation</li>
+              </ul>
+              
+              <h3>Technologies Used</h3>
+              <p>LaTeX, KaTeX, JavaScript, Python, CSS, HTML</p>
+              
+              <div class="project-links">
+                <a href="https://github.com/Woody-sudo/yuque-katex-notes" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                  <i class="fab fa-github"></i> View on GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="index.html"><span>Woody</span>-Sudo</a>
+          <p>Building digital experiences that matter</p>
+        </div>
+        <div class="footer-nav">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Woody-sudo. All rights reserved.</p>
+        <p>Last updated: May 26, 2025</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/theme-toggle.js"></script>
+  <script src="assets/js/background-effect.js"></script>
+  <script src="assets/js/portfolio.js"></script>
+</body>
+</html>

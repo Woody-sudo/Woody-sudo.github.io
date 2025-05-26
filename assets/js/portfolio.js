@@ -1,40 +1,27 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Portfolio filtering functionality
-  const filterButtons = document.querySelectorAll('.portfolio-filters button');
-  const portfolioItems = document.querySelectorAll('.portfolio-item');
+  // 项目过滤功能
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projectItems = document.querySelectorAll('.project-item');
   
-  if (filterButtons.length > 0) {
-    filterButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        // Remove active class from all buttons
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        
-        // Add active class to clicked button
-        this.classList.add('active');
-        
-        const filter = this.getAttribute('data-filter');
-        
-        // Filter portfolio items
-        portfolioItems.forEach(item => {
-          if (filter === 'all') {
-            item.style.display = 'block';
-          } else {
-            if (item.classList.contains(filter)) {
-              item.style.display = 'block';
-            } else {
-              item.style.display = 'none';
-            }
-          }
-        });
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // 移除所有按钮的active类
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      
+      // 给当前按钮添加active类
+      button.classList.add('active');
+      
+      // 获取过滤条件
+      const filter = button.getAttribute('data-filter');
+      
+      // 显示或隐藏项目
+      projectItems.forEach(item => {
+        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
       });
     });
-  }
-  
-  // Project modal functionality
-  const projectLinks = document.querySelectorAll('.project-details-link');
-  const modal = document.querySelector('.project-modal');
-  const modalClose = document.querySelector('.modal-close');
-  const modalContent = document.querySelector('.modal-content');
-  
-  if (projectLinks.length > 0 && modal) {
-    project
+  });
+});
