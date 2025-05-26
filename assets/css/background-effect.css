@@ -7,22 +7,26 @@
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
+  background-color: inherit; /* 继承父元素背景色 */
+  transition: background-color var(--transition-fast, 0.2s ease);
 }
 
 .bg-square {
   position: absolute;
   border-radius: 2px;
   opacity: 0;
-  transition: opacity 0.3s ease; /* 加快过渡速度 */
+  transition: opacity 0.3s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* 深色模式样式 - 使用更深的蓝色 */
+[data-theme="dark"] .bg-square,
 body.dark-mode .bg-square {
   background-color: rgba(10, 30, 80, 0.35); /* 更深的蓝色 */
   box-shadow: 0 0 15px rgba(20, 60, 200, 0.6); /* 更亮的发光效果 */
 }
 
 /* 浅色模式样式 */
+[data-theme="light"] .bg-square,
 body:not(.dark-mode) .bg-square {
   background-color: rgba(200, 230, 255, 0.2);
   box-shadow: 0 0 10px rgba(150, 200, 255, 0.4);

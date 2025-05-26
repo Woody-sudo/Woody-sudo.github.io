@@ -1,3 +1,27 @@
+/* Prevent flash of unstyled content and white flashes */
+html {
+  background-color: #121212; /* Default to dark background */
+  color-scheme: dark light; /* Support system preference */
+}
+
+body {
+  background-color: #121212; /* Fallback dark background */
+  opacity: 0; /* Hide until theme is loaded */
+  transition: opacity 0.1s ease-in;
+}
+
+/* Show body when theme is properly loaded */
+body.theme-loaded {
+  opacity: 1;
+}
+
+/* Fast theme switching for elements */
+* {
+  transition: background-color var(--transition-fast), 
+              color var(--transition-fast), 
+              border-color var(--transition-fast);
+}
+
 :root {
   /* Color Scheme - Light Mode */
   --color-primary: #3498db;
@@ -65,4 +89,24 @@
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.7);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.4), 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Light Mode Override for when theme switches */
+[data-theme="light"] {
+  --color-background: #fff;
+  --color-background-alt: #f8f9fa;
+}
+
+/* Additional theme flash prevention */
+html[data-theme="dark"] {
+  background-color: #121212;
+}
+
+html[data-theme="light"] {
+  background-color: #fff;
+}
+
+/* Smooth theme transitions */
+html, body, #background-animation {
+  transition: background-color var(--transition-fast);
 }

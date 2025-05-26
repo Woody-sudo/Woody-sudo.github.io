@@ -5,12 +5,18 @@
   box-sizing: border-box;
 }
 
+html {
+  transition: background-color var(--transition-fast);
+}
+
 body {
   font-family: var(--font-primary);
   color: var(--color-text);
   background-color: var(--color-background);
   line-height: 1.6;
-  transition: background-color var(--transition-normal), color var(--transition-normal);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  min-height: 100vh;
+  position: relative;
 }
 
 img {

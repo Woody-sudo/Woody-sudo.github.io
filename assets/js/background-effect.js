@@ -3,6 +3,33 @@ document.addEventListener('DOMContentLoaded', function() {
   const squareCount = 150; // 方块数量增加到3倍（原来是50）
   const squares = [];
   
+  // 确保背景动画容器继承正确的主题
+  function updateBackgroundTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    if (currentTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }
+  
+  // 初始化主题
+  updateBackgroundTheme();
+  
+  // 监听主题变化
+  const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+        updateBackgroundTheme();
+      }
+    });
+  });
+  
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['data-theme']
+  });
+  
   // 创建方块
   for (let i = 0; i < squareCount; i++) {
     createSquare();

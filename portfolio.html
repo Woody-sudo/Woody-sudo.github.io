@@ -5,6 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfolio of Woody-Sudo - ML Researcher & Developer with Physics Background">
   <title>Woody-sudo | Portfolio</title>
+  
+  <!-- Prevent theme flash - must be first script -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.style.backgroundColor = theme === 'dark' ? '#121212' : '#fff';
+      
+      // Add theme-loaded class after DOM is ready
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('theme-loaded');
+      });
+    })();
+  </script>
+  
   <link rel="stylesheet" href="assets/css/theme.css">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/animations.css">
