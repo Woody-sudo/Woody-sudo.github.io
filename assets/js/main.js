@@ -88,11 +88,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Add page transition effect
+  // Add page transition effect with improved navigation continuity
   window.addEventListener('beforeunload', function() {
     const transitionElement = document.createElement('div');
     transitionElement.className = 'page-transition';
     document.body.appendChild(transitionElement);
+    document.body.classList.add('page-leaving');
+  });
+
+  // Enhanced page transition for navigation links
+  document.querySelectorAll('a[href^="./"], a[href$=".html"], a[href^="../"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      // Only apply transition for internal navigation
+      if (this.hostname === window.location.hostname) {
+        document.body.classList.add('page-leaving');
+      }
+    });
   });
   
   // Set active navigation link based on current page
