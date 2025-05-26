@@ -191,7 +191,7 @@ ul {
 
 /* Hero Section */
 .hero {
-  padding: calc(80px + var(--space-xxl)) 0 var(--space-lg); /* 将此处的 var(--space-xxl) 修改为 var(--space-lg) */
+  padding: calc(40px + var(--space-xxl)) 0 var(--space-lg); /* 将此处的 var(--space-xxl) 修改为 var(--space-lg) */
   overflow: hidden;
 }
 
