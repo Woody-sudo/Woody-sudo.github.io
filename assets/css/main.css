@@ -829,7 +829,55 @@ ul {
   margin-bottom: var(--space-sm);
 }
 
-/* Responsive Design */
+/* 圆角方形过滤按钮样式 */
+.project-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 3rem 0;
+  gap: 0.75rem;
+}
+
+.filter-btn {
+  background: var(--bg-secondary);
+  border: 2px solid transparent;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px; /* 圆角方形 */
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* 无衬线字体 */
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.filter-btn:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.filter-btn.active {
+  color: var(--bg-color);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(var(--primary-rgb), 0.2);
+}
+
+/* 修正CV页面中的导航链接 */
+.site-header .nav-links li a.active {
+  color: var(--primary-color);
+}
+
+/* 项目显示时的淡入效果 */
+.project-item {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
 @media (max-width: 1024px) {
   .container {
     max-width: 100%;
