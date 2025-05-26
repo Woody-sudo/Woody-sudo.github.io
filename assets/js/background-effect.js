@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   const bgContainer = document.getElementById('background-animation');
-  const squareCount = 150; // 方块数量增加到3倍（原来是50）
+  const squareCount = 160; // 方块数量增加到3倍（原来是50）
   const squares = [];
   
   if (!bgContainer) {
@@ -81,12 +81,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // 激活方块
         square.classList.add('active');
         
-        // 一段时间后关闭方块 - 缩短持续时间
+        // 延长单个方块的存活时间
         setTimeout(() => {
           square.classList.remove('active');
-        }, Math.random() * 800 + 200); // 更短的持续时间（原来是1500+500）
+        }, Math.random() * 2000 + 1000); // 延长存活时间：1000-3000毫秒
       }
-    }, 100);
+    }, 500);  // 单个方块频率从200改为500
     
     // 增加额外的随机闪烁循环以增强效果
     setInterval(() => {
@@ -101,12 +101,12 @@ document.addEventListener('DOMContentLoaded', function() {
           // 激活方块
           square.classList.add('active');
           
-          // 一段时间后关闭方块
+          // 延长多方块的存活时间
           setTimeout(() => {
             square.classList.remove('active');
-          }, Math.random() * 600 + 100); // 更短的持续时间
+          }, Math.random() * 1500 + 800); // 延长存活时间：800-2300毫秒
         }
       }
-    }, 300);
+    }, 800); // 多方块频率从300改为800
   }
 });
