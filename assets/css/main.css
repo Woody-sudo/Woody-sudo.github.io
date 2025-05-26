@@ -1015,7 +1015,8 @@ ul {
 .contact,
 .cv-content,
 .portfolio-content,
-.blog-content {
+.blog-content, /* 在此添加逗号 */
+.portfolio-header { /* 添加此选择器 */
   padding-top: 80px; /* Add consistent top padding for all main content sections */
 }
 
