@@ -11,6 +11,7 @@ body {
   background-color: var(--color-background);
   line-height: 1.6;
   transition: background-color var(--transition-normal), color var(--transition-normal);
+  padding-top: 70px; /* 为固定导航栏预留空间 */
 }
 
 img {
@@ -96,6 +97,7 @@ ul {
   color: var(--text-color);
   text-decoration: none;
   transition: color 0.3s ease;
+  margin-right: 15px;
 }
 
 .logo a span {
@@ -107,10 +109,13 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  border-bottom: 2px solid var(--primary-color); /* 添加蓝色下划线 */
+  padding-bottom: 5px; /* 增加一些底部间距 */
 }
 
 .nav-links li {
   margin: 0 1rem;
+  position: relative;
 }
 
 .nav-links a {
@@ -118,8 +123,8 @@ ul {
   color: var(--text-color);
   text-decoration: none;
   padding: 0.5rem 0;
-  position: relative;
   transition: color 0.3s ease;
+  display: block;
 }
 
 .nav-links a:hover {
@@ -134,44 +139,21 @@ ul {
   content: '';
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -7px; /* 调整位置使其位于蓝线上 */
   width: 100%;
-  height: 2px;
+  height: 3px;
   background-color: var(--primary-color);
   transform: scaleX(1);
-  transition: transform 0.3s ease;
 }
 
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  background-color: var(--primary-color);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.nav-links a:hover::after {
-  transform: scaleX(1);
-}
-
-.theme-toggle {
-  background: none;
-  border: none;
+/* 调整logo间距 */
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--text-color);
-  font-size: 1.25rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 50%;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.theme-toggle:hover {
-  background-color: var(--bg-secondary);
-  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin-right: 15px;
 }
 
 .mobile-menu-toggle {
@@ -878,6 +860,29 @@ ul {
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
+/* 调整各部分内容的上边距 */
+.cv-header, 
+.portfolio-header,
+.hero,
+.about,
+.featured-projects,
+.recent-posts,
+.contact {
+  padding-top: 2rem;
+}
+
+/* 确保背景动画覆盖整个页面 */
+#background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
 @media (max-width: 1024px) {
   .container {
     max-width: 100%;
@@ -899,6 +904,22 @@ ul {
 }
 
 @media (max-width: 768px) {
+  body {
+    padding-top: 60px; /* 移动设备上导航栏可能高度稍小 */
+  }
+  
+  .nav-links {
+    padding-bottom: 3px;
+  }
+  
+  .site-header .container {
+    padding: 0.8rem 1rem;
+  }
+  
+  .logo a {
+    font-size: 1.2rem;
+  }
+  
   .hero .container,
   .about-content,
   .contact-content,
