@@ -354,6 +354,7 @@ ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-xl);
+  align-items: center;
 }
 
 .stats {
@@ -761,13 +762,48 @@ ul {
 }
 
 .cv-content {
-  padding-top: 20px;
+  padding: 4rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.cv-content::before {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 4rem);
+  max-width: 1400px;
+  height: calc(100% - 4rem);
+  background-color: var(--color-background);
+  border-radius: 16px;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.1),
+    0 4px 20px rgba(0, 0, 0, 0.05);
+  z-index: -1;
+  border: 1px solid var(--color-border);
+}
+
+/* Dark theme specific background */
+[data-theme="dark"] .cv-content::before {
+  background-color: var(--color-background);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.4),
+    0 4px 20px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .cv-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: var(--space-xl);
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem;
+  position: relative;
+  z-index: 3;
 }
 
 .cv-sidebar, .cv-main {
@@ -1130,26 +1166,1982 @@ ul {
 }
 
 .cv-content {
-  padding-top: 20px;
+  padding: 4rem 0;
+  position: relative;
+  z-index: 2;
 }
 
-/* Add this to ensure content appears above background */
-.site-header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000; /* This is already correct */
-  /* ... rest of your header styles ... */
+.cv-content::before {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 4rem);
+  max-width: 1400px;
+  height: calc(100% - 4rem);
+  background-color: var(--color-background);
+  border-radius: 16px;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.1),
+    0 4px 20px rgba(0, 0, 0, 0.05);
+  z-index: -1;
+  border: 1px solid var(--color-border);
 }
 
-/* Ensure main content is above background */
+/* Dark theme specific background */
+[data-theme="dark"] .cv-content::before {
+  background-color: var(--color-background);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.4),
+    0 4px 20px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.cv-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem;
+  position: relative;
+  z-index: 3;
+}
+
+.cv-sidebar, .cv-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.cv-section {
+  margin-bottom: var(--space-lg);
+}
+
+.cv-section h2 {
+  position: relative;
+  padding-bottom: var(--space-xs);
+  margin-bottom: var(--space-md);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.contact-list, .skill-list, .language-list {
+  list-style: none;
+  margin: 0;
+}
+
+.contact-list li, .skill-list li {
+  margin-bottom: var(--space-xs);
+}
+
+.skill-group {
+  margin-bottom: var(--space-md);
+}
+
+.skill-group h3 {
+  font-size: 1rem;
+  margin-bottom: var(--space-xs);
+  color: var(--color-text-light);
+}
+
+.language-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+}
+
+.language-level {
+  display: flex;
+  gap: 3px;
+}
+
+.language-level span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-border);
+}
+
+.language-level span.filled {
+  background-color: var(--color-primary);
+}
+
+.experience-item, .education-item {
+  margin-bottom: var(--space-lg);
+}
+
+.experience-header, .education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-sm);
+}
+
+.date {
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+}
+
+.experience-item h3, .education-item h3 {
+  margin-bottom: var(--space-xxs);
+}
+
+.experience-item h4, .education-item h4 {
+  color: var(--color-text-light);
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.certification-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+
+.certification-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.certification-item i {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+.certification-item h4 {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.certification-item p {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  margin-bottom: 0;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-lg);
+}
+
+.project-item {
+  padding: var(--space-md);
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-background-alt);
+  transition: transform var(--transition-normal), border-color var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+/* Dark mode lighter edges for portfolio project items */
+[data-theme="dark"] .project-item {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 5px rgba(255, 255, 255, 0.03);
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Enhanced hover effect for dark mode portfolio items */
+[data-theme="dark"] .project-item:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 255, 255, 0.08);
+}
+
+.project-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-xs);
+}
+
+.project-item p {
+  font-size: 0.9rem;
+  margin-bottom: var(--space-sm);
+}
+
+/* 圆角方形过滤按钮样式 */
+.project-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 3rem 0;
+  gap: 0.75rem;
+}
+
+.filter-btn {
+  background: var(--bg-secondary);
+  border: 2px solid transparent;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px; /* 圆角方形 */
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* 无衬线字体 */
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.filter-btn:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.filter-btn.active {
+  color: var(--bg-color);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(var(--primary-rgb), 0.2);
+}
+
+/* 修正CV页面中的导航链接 */
+.site-header .nav-links li a.active {
+  color: var(--primary-color);
+}
+
+/* 项目显示时的淡入效果 */
+.project-item {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 100%;
+    padding: 0 var(--space-lg);
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.25rem;
+  }
+  
+  .profile-image {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero .container,
+  .about-content,
+  .contact-content,
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .hero-image {
+    order: -1;
+  }
+  
+  .hero-content {
+    text-align: center;
+    max-width: 100%;
+  }
+  
+  .cta-buttons {
+    justify-content: center;
+  }
+  
+  .cv-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .mobile-menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--color-text);
+    transition: all var(--transition-fast);
+  }
+  
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100%;
+    background-color: var(--color-background);
+    box-shadow: var(--shadow-lg);
+    transition: left var(--transition-normal);
+    z-index: 999;
+  }
+  
+  .main-nav.active {
+    left: 0;
+  }
+  
+  .main-nav .nav-links {
+    flex-direction: column;
+    padding: var(--space-xxl) var(--space-lg);
+  }
+  
+  .main-nav .nav-links li {
+    margin: var(--space-sm) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --space-xxl: 2rem;
+    --space-xl: 1.5rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .project-cards,
+  .post-cards,
+  .certification-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .profile-image {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+}
+
+/* Add padding to all main content sections */
 .hero,
 .about,
 .featured-projects,
 .recent-posts,
 .contact,
-.site-footer {
+.cv-content,
+.portfolio-content,
+.blog-content, /* 在此添加逗号 */
+.portfolio-header { /* 添加此选择器 */
+  padding-top: 80px; /* Add consistent top padding for all main content sections */
+}
+
+/* Adjust specific sections that already have padding */
+.about {
+  padding: calc(80px + var(--space-xxl)) 0 var(--space-xxl);
+}
+
+.featured-projects {
+  padding: calc(80px + var(--space-xxl)) 0 var(--space-xxl);
+}
+
+.recent-posts {
+  padding: calc(80px + var(--space-xxl)) 0 var(--space-xxl);
+}
+
+.contact {
+  padding: calc(80px + var(--space-xxl)) 0 var(--space-xxl);
+}
+
+/* CV Page Specific Styles */
+.cv-header {
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+  color: white;
+  padding: var(--space-xl) 0;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.cv-content {
+  padding: 4rem 0;
   position: relative;
-  z-index: 10; /* Add this to all main sections */
+  z-index: 2;
+}
+
+.cv-content::before {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 4rem);
+  max-width: 1400px;
+  height: calc(100% - 4rem);
+  background-color: var(--color-background);
+  border-radius: 16px;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.1),
+    0 4px 20px rgba(0, 0, 0, 0.05);
+  z-index: -1;
+  border: 1px solid var(--color-border);
+}
+
+/* Dark theme specific background */
+[data-theme="dark"] .cv-content::before {
+  background-color: var(--color-background);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.4),
+    0 4px 20px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.cv-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem;
+  position: relative;
+  z-index: 3;
+}
+
+.cv-sidebar, .cv-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.cv-section {
+  margin-bottom: var(--space-lg);
+}
+
+.cv-section h2 {
+  position: relative;
+  padding-bottom: var(--space-xs);
+  margin-bottom: var(--space-md);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.contact-list, .skill-list, .language-list {
+  list-style: none;
+  margin: 0;
+}
+
+.contact-list li, .skill-list li {
+  margin-bottom: var(--space-xs);
+}
+
+.skill-group {
+  margin-bottom: var(--space-md);
+}
+
+.skill-group h3 {
+  font-size: 1rem;
+  margin-bottom: var(--space-xs);
+  color: var(--color-text-light);
+}
+
+.language-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+}
+
+.language-level {
+  display: flex;
+  gap: 3px;
+}
+
+.language-level span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-border);
+}
+
+.language-level span.filled {
+  background-color: var(--color-primary);
+}
+
+.experience-item, .education-item {
+  margin-bottom: var(--space-lg);
+}
+
+.experience-header, .education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-sm);
+}
+
+.date {
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+}
+
+.experience-item h3, .education-item h3 {
+  margin-bottom: var(--space-xxs);
+}
+
+.experience-item h4, .education-item h4 {
+  color: var(--color-text-light);
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.certification-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+
+.certification-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.certification-item i {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+.certification-item h4 {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.certification-item p {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  margin-bottom: 0;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-lg);
+}
+
+.project-item {
+  padding: var(--space-md);
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-background-alt);
+  transition: transform var(--transition-normal), border-color var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+/* Dark mode lighter edges for portfolio project items */
+[data-theme="dark"] .project-item {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 5px rgba(255, 255, 255, 0.03);
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Enhanced hover effect for dark mode portfolio items */
+[data-theme="dark"] .project-item:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 255, 255, 0.08);
+}
+
+.project-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-xs);
+}
+
+.project-item p {
+  font-size: 0.9rem;
+  margin-bottom: var(--space-sm);
+}
+
+/* 圆角方形过滤按钮样式 */
+.project-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 3rem 0;
+  gap: 0.75rem;
+}
+
+.filter-btn {
+  background: var(--bg-secondary);
+  border: 2px solid transparent;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px; /* 圆角方形 */
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* 无衬线字体 */
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.filter-btn:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.filter-btn.active {
+  color: var(--bg-color);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(var(--primary-rgb), 0.2);
+}
+
+/* 修正CV页面中的导航链接 */
+.site-header .nav-links li a.active {
+  color: var(--primary-color);
+}
+
+/* 项目显示时的淡入效果 */
+.project-item {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 100%;
+    padding: 0 var(--space-lg);
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.25rem;
+  }
+  
+  .profile-image {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero .container,
+  .about-content,
+  .contact-content,
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .hero-image {
+    order: -1;
+  }
+  
+  .hero-content {
+    text-align: center;
+    max-width: 100%;
+  }
+  
+  .cta-buttons {
+    justify-content: center;
+  }
+  
+  .cv-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .mobile-menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--color-text);
+    transition: all var(--transition-fast);
+  }
+  
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100%;
+    background-color: var(--color-background);
+    box-shadow: var(--shadow-lg);
+    transition: left var(--transition-normal);
+    z-index: 999;
+  }
+  
+  .main-nav.active {
+    left: 0;
+  }
+  
+  .main-nav .nav-links {
+    flex-direction: column;
+    padding: var(--space-xxl) var(--space-lg);
+  }
+  
+  .main-nav .nav-links li {
+    margin: var(--space-sm) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --space-xxl: 2rem;
+    --space-xl: 1.5rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .project-cards,
+  .post-cards,
+  .certification-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .profile-image {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+}
+
+/* Add padding to all main content sections */
+.hero,
+.about,
+.featured-projects,
+.recent-posts,
+.contact,
+.cv-content,
+.portfolio-content,
+.blog-content, /* 在此添加逗号 */
+.portfolio-header { /* 添加此选择器 */
+  padding-top: 80px; /* Add consistent top padding for all main content sections */
+}
+
+/* Adjust specific sections that already have padding */
+.about {
+  padding: calc(80px + var(--space-xxl)) 0 var(--space-xxl);
+}
+
+.featured-projects {
+  padding: calc(80px + var(--space-xxl)) 0 var(--space-xxl);
+}
+
+.recent-posts {
+  padding: calc(80px + var(--space-xxl)) 0 var(--space-xxl);
+}
+
+.contact {
+  padding: calc(80px + var(--space-xxl)) 0 var(--space-xxl);
+}
+
+/* CV Page Specific Styles */
+.cv-header {
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+  color: white;
+  padding: var(--space-xl) 0;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.cv-content {
+  padding: 4rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.cv-content::before {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 4rem);
+  max-width: 1400px;
+  height: calc(100% - 4rem);
+  background-color: var(--color-background);
+  border-radius: 16px;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.1),
+    0 4px 20px rgba(0, 0, 0, 0.05);
+  z-index: -1;
+  border: 1px solid var(--color-border);
+}
+
+/* Dark theme specific background */
+[data-theme="dark"] .cv-content::before {
+  background-color: var(--color-background);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.4),
+    0 4px 20px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.cv-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem;
+  position: relative;
+  z-index: 3;
+}
+
+.cv-sidebar, .cv-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.cv-section {
+  margin-bottom: var(--space-lg);
+}
+
+.cv-section h2 {
+  position: relative;
+  padding-bottom: var(--space-xs);
+  margin-bottom: var(--space-md);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.contact-list, .skill-list, .language-list {
+  list-style: none;
+  margin: 0;
+}
+
+.contact-list li, .skill-list li {
+  margin-bottom: var(--space-xs);
+}
+
+.skill-group {
+  margin-bottom: var(--space-md);
+}
+
+.skill-group h3 {
+  font-size: 1rem;
+  margin-bottom: var(--space-xs);
+  color: var(--color-text-light);
+}
+
+.language-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+}
+
+.language-level {
+  display: flex;
+  gap: 3px;
+}
+
+.language-level span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-border);
+}
+
+.language-level span.filled {
+  background-color: var(--color-primary);
+}
+
+.experience-item, .education-item {
+  margin-bottom: var(--space-lg);
+}
+
+.experience-header, .education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-sm);
+}
+
+.date {
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+}
+
+.experience-item h3, .education-item h3 {
+  margin-bottom: var(--space-xxs);
+}
+
+.experience-item h4, .education-item h4 {
+  color: var(--color-text-light);
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.certification-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+
+.certification-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.certification-item i {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+.certification-item h4 {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.certification-item p {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  margin-bottom: 0;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-lg);
+}
+
+.project-item {
+  padding: var(--space-md);
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-background-alt);
+  transition: transform var(--transition-normal), border-color var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+/* Dark mode lighter edges for portfolio project items */
+[data-theme="dark"] .project-item {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 5px rgba(255, 255, 255, 0.03);
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Enhanced hover effect for dark mode portfolio items */
+[data-theme="dark"] .project-item:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 255, 255, 0.08);
+}
+
+.project-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-xs);
+}
+
+.project-item p {
+  font-size: 0.9rem;
+  margin-bottom: var(--space-sm);
+}
+
+/* 圆角方形过滤按钮样式 */
+.project-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 3rem 0;
+  gap: 0.75rem;
+}
+
+.filter-btn {
+  background: var(--bg-secondary);
+  border: 2px solid transparent;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px; /* 圆角方形 */
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* 无衬线字体 */
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.filter-btn:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.filter-btn.active {
+  color: var(--bg-color);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(var(--primary-rgb), 0.2);
+}
+
+/* 修正CV页面中的导航链接 */
+.site-header .nav-links li a.active {
+  color: var(--primary-color);
+}
+
+/* 项目显示时的淡入效果 */
+.project-item {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 100%;
+    padding: 0 var(--space-lg);
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.25rem;
+  }
+  
+  .profile-image {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero .container,
+  .about-content,
+  .contact-content,
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .hero-image {
+    order: -1;
+  }
+  
+  .hero-content {
+    text-align: center;
+    max-width: 100%;
+  }
+  
+  .cta-buttons {
+    justify-content: center;
+  }
+  
+  .cv-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .mobile-menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--color-text);
+    transition: all var(--transition-fast);
+  }
+  
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100%;
+    background-color: var(--color-background);
+    box-shadow: var(--shadow-lg);
+    transition: left var(--transition-normal);
+    z-index: 999;
+  }
+  
+  .main-nav.active {
+    left: 0;
+  }
+  
+  .main-nav .nav-links {
+    flex-direction: column;
+    padding: var(--space-xxl) var(--space-lg);
+  }
+  
+  .main-nav .nav-links li {
+    margin: var(--space-sm) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --space-xxl: 2rem;
+    --space-xl: 1.5rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .project-cards,
+  .post-cards,
+  .certification-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .profile-image {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+}
+
+/* Add padding to all main content sections */
+.hero,
+.about,
+.featured-projects,
+.recent-posts,
+.contact,
+.cv-content,
+.portfolio-content,
+.blog-content, /* 在此添加逗号 */
+.portfolio-header { /* 添加此选择器 */
+  padding-top: 80px; /* Add consistent top padding for all main content sections */
+}
+
+/* Adjust specific sections that already have padding */
+.about {
+  padding: calc(80px + var(--space-xxl)) 0 var(--space-xxl);
+}
+
+.featured-projects {
+  padding: calc(80px + var(--space-xxl)) 0 var(--space-xxl);
+}
+
+.recent-posts {
+  padding: calc(80px + var(--space-xxl)) 0 var(--space-xxl);
+}
+
+.contact {
+  padding: calc(80px + var(--space-xxl)) 0 var(--space-xxl);
+}
+
+/* CV Page Specific Styles */
+.cv-header {
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+  color: white;
+  padding: var(--space-xl) 0;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.cv-content {
+  padding: 4rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.cv-content::before {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 4rem);
+  max-width: 1400px;
+  height: calc(100% - 4rem);
+  background-color: var(--color-background);
+  border-radius: 16px;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.1),
+    0 4px 20px rgba(0, 0, 0, 0.05);
+  z-index: -1;
+  border: 1px solid var(--color-border);
+}
+
+/* Dark theme specific background */
+[data-theme="dark"] .cv-content::before {
+  background-color: var(--color-background);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.4),
+    0 4px 20px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.cv-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem;
+  position: relative;
+  z-index: 3;
+}
+
+.cv-sidebar, .cv-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.cv-section {
+  margin-bottom: var(--space-lg);
+}
+
+.cv-section h2 {
+  position: relative;
+  padding-bottom: var(--space-xs);
+  margin-bottom: var(--space-md);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.contact-list, .skill-list, .language-list {
+  list-style: none;
+  margin: 0;
+}
+
+.contact-list li, .skill-list li {
+  margin-bottom: var(--space-xs);
+}
+
+.skill-group {
+  margin-bottom: var(--space-md);
+}
+
+.skill-group h3 {
+  font-size: 1rem;
+  margin-bottom: var(--space-xs);
+  color: var(--color-text-light);
+}
+
+.language-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+}
+
+.language-level {
+  display: flex;
+  gap: 3px;
+}
+
+.language-level span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-border);
+}
+
+.language-level span.filled {
+  background-color: var(--color-primary);
+}
+
+.experience-item, .education-item {
+  margin-bottom: var(--space-lg);
+}
+
+.experience-header, .education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-sm);
+}
+
+.date {
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+}
+
+.experience-item h3, .education-item h3 {
+  margin-bottom: var(--space-xxs);
+}
+
+.experience-item h4, .education-item h4 {
+  color: var(--color-text-light);
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.certification-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+
+.certification-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.certification-item i {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+.certification-item h4 {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.certification-item p {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  margin-bottom: 0;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-lg);
+}
+
+.project-item {
+  padding: var(--space-md);
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-background-alt);
+  transition: transform var(--transition-normal), border-color var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+/* Dark mode lighter edges for portfolio project items */
+[data-theme="dark"] .project-item {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 5px rgba(255, 255, 255, 0.03);
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Enhanced hover effect for dark mode portfolio items */
+[data-theme="dark"] .project-item:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 255, 255, 0.08);
+}
+
+.project-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-xs);
+}
+
+.project-item p {
+  font-size: 0.9rem;
+  margin-bottom: var(--space-sm);
+}
+
+/* 圆角方形过滤按钮样式 */
+.project-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 3rem 0;
+  gap: 0.75rem;
+}
+
+.filter-btn {
+  background: var(--bg-secondary);
+  border: 2px solid transparent;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px; /* 圆角方形 */
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* 无衬线字体 */
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.filter-btn:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.filter-btn.active {
+  color: var(--bg-color);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(var(--primary-rgb), 0.2);
+}
+
+/* 修正CV页面中的导航链接 */
+.site-header .nav-links li a.active {
+  color: var(--primary-color);
+}
+
+/* 项目显示时的淡入效果 */
+.project-item {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 100%;
+    padding: 0 var(--space-lg);
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.25rem;
+  }
+  
+  .profile-image {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero .container,
+  .about-content,
+  .contact-content,
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .hero-image {
+    order: -1;
+  }
+  
+  .hero-content {
+    text-align: center;
+    max-width: 100%;
+  }
+  
+  .cta-buttons {
+    justify-content: center;
+  }
+  
+  .cv-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .mobile-menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--color-text);
+    transition: all var(--transition-fast);
+  }
+  
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100%;
+    background-color: var(--color-background);
+    box-shadow: var(--shadow-lg);
+       transition: left var(--transition-normal);
+    z-index: 999;
+  }
+  
+  .main-nav.active {
+    left: 0;
+  }
+  
+  .main-nav .nav-links {
+    flex-direction: column;
+    padding: var(--space-xxl) var(--space-lg);
+  }
+  
+  .main-nav .nav-links li {
+    margin: var(--space-sm) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --space-xxl: 2rem;
+    --space-xl: 1.5rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .project-cards,
+  .post-cards,
+  .certification-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .profile-image {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+}
+
+/* Add padding to all main content sections */
+.hero,
+.about,
+.featured-projects,
+.recent-posts,
+.contact,
+.cv-content,
+.portfolio-content,
+.blog-content, /* 在此添加逗号 */
+.portfolio-header { /* 添加此选择器 */
+  padding-top: 80px; /* Add consistent top padding for all main content sections */
+}
+
+/* Adjust specific sections that already have padding */
+.about {
+  padding: calc(80px + var(--space-xxl)) 0 var(--space-xxl);
+}
+
+.featured-projects {
+  padding: calc(80px + var(--space-xxl)) 0 var(--space-xxl);
+}
+
+.recent-posts {
+  padding: calc(80px + var(--space-xxl)) 0 var(--space-xxl);
+}
+
+.contact {
+  padding: calc(80px + var(--space-xxl)) 0 var(--space-xxl);
+}
+
+/* CV Page Specific Styles */
+.cv-header {
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+  color: white;
+  padding: var(--space-xl) 0;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.cv-content {
+  padding: 4rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.cv-content::before {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 4rem);
+  max-width: 1400px;
+  height: calc(100% - 4rem);
+  background-color: var(--color-background);
+  border-radius: 16px;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.1),
+    0 4px 20px rgba(0, 0, 0, 0.05);
+  z-index: -1;
+  border: 1px solid var(--color-border);
+}
+
+/* Dark theme specific background */
+[data-theme="dark"] .cv-content::before {
+  background-color: var(--color-background);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.4),
+    0 4px 20px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.cv-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem;
+  position: relative;
+  z-index: 3;
+}
+
+.cv-sidebar, .cv-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.cv-section {
+  margin-bottom: var(--space-lg);
+}
+
+.cv-section h2 {
+  position: relative;
+  padding-bottom: var(--space-xs);
+  margin-bottom: var(--space-md);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.contact-list, .skill-list, .language-list {
+  list-style: none;
+  margin: 0;
+}
+
+.contact-list li, .skill-list li {
+  margin-bottom: var(--space-xs);
+}
+
+.skill-group {
+  margin-bottom: var(--space-md);
+}
+
+.skill-group h3 {
+  font-size: 1rem;
+  margin-bottom: var(--space-xs);
+  color: var(--color-text-light);
+}
+
+.language-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+}
+
+.language-level {
+  display: flex;
+  gap: 3px;
+}
+
+.language-level span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-border);
+}
+
+.language-level span.filled {
+  background-color: var(--color-primary);
+}
+
+.experience-item, .education-item {
+  margin-bottom: var(--space-lg);
+}
+
+.experience-header, .education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-sm);
+}
+
+.date {
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+}
+
+.experience-item h3, .education-item h3 {
+  margin-bottom: var(--space-xxs);
+}
+
+.experience-item h4, .education-item h4 {
+  color: var(--color-text-light);
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.certification-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+
+.certification-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.certification-item i {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+.certification-item h4 {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.certification-item p {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  margin-bottom: 0;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-lg);
+}
+
+.project-item {
+  padding: var(--space-md);
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-background-alt);
+  transition: transform var(--transition-normal), border-color var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+/* Dark mode lighter edges for portfolio project items */
+[data-theme="dark"] .project-item {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 5px rgba(255, 255, 255, 0.03);
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Enhanced hover effect for dark mode portfolio items */
+[data-theme="dark"] .project-item:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 255, 255, 0.08);
+}
+
+.project-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-xs);
+}
+
+.project-item p {
+  font-size: 0.9rem;
+  margin-bottom: var(--space-sm);
+}
+
+/* 圆角方形过滤按钮样式 */
+.project-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 3rem 0;
+  gap: 0.75rem;
+}
+
+.filter-btn {
+  background: var(--bg-secondary);
+  border: 2px solid transparent;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px; /* 圆角方形 */
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* 无衬线字体 */
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.filter-btn:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.filter-btn.active {
+  color: var(--bg-color);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(var(--primary-rgb), 0.2);
+}
+
+/* 修正CV页面中的导航链接 */
+.site-header .nav-links li a.active {
+  color: var(--primary-color);
+}
+
+/* 项目显示时的淡入效果 */
+.project-item {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 100%;
+    padding: 0 var(--space-lg);
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.25rem;
+  }
+  
+  .profile-image {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero .container,
+  .about-content,
+  .contact-content,
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .hero-image {
+    order: -1;
+  }
+  
+  .hero-content {
+    text-align: center;
+    max-width: 100%;
+  }
+  
+  .cta-buttons {
+    justify-content: center;
+  }
+  
+  .cv-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .mobile-menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--color-text);
+    transition: all var(--transition-fast);
+  }
+  
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100%;
+    background-color: var(--color-background);
+    box-shadow: var(--shadow-lg);
+    transition: left var(--transition-normal);
+    z-index: 999;
+  }
+  
+  .main-nav.active {
+    left: 0;
+  }
+  
+  .main-nav .nav-links {
+    flex-direction: column;
+    padding: var(--space-xxl) var(--space-lg);
+  }
+  
+  .main-nav .nav-links li {
+    margin: var(--space-sm) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --space-xxl: 2rem;
+    --space-xl: 1.5rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .project-cards,
+  .post-cards,
+  .certification-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .profile-image {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
 }
