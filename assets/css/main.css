@@ -1114,3 +1114,24 @@ ul {
 .cv-content {
   padding-top: 20px;
 }
+
+/* Add this to ensure content appears above background */
+.site-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* This is already correct */
+  /* ... rest of your header styles ... */
+}
+
+/* Ensure main content is above background */
+.hero,
+.about,
+.featured-projects,
+.recent-posts,
+.contact,
+.site-footer {
+  position: relative;
+  z-index: 10; /* Add this to all main sections */
+}
