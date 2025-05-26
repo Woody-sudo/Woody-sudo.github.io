@@ -3,24 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Professional CV of Woody-sudo - Developer, Designer, Creator">
+  <meta name="description" content="Professional CV of Woody-sudo - ML Researcher & Developer with Physics Background">
   <title>Woody-sudo | Curriculum Vitae</title>
   <link rel="stylesheet" href="assets/css/theme.css">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/background-effect.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>
 <body>
+  <!-- Background Animation -->
+  <div id="background-animation"></div>
+  
   <!-- Header with Navigation -->
-  <!-- (Same as index.html) -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html"><span>Woody</span>-Sudo</a>
+      </div>
+      <nav class="main-nav">
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cv.html" class="active">CV</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" aria-label="Toggle dark/light mode">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </header>
   
   <!-- CV Header -->
   <section class="cv-header">
     <div class="container">
       <div class="cv-intro">
         <h1>Curriculum Vitae</h1>
-        <p>Full-Stack Developer & UI/UX Designer with expertise in modern web technologies</p>
+        <p>ML Researcher & Developer with Physics Background</p>
         <a href="assets/files/resume.pdf" class="btn-primary" download>
           <i class="fas fa-download"></i> Download PDF
         </a>
@@ -38,45 +63,43 @@
             <h2>Contact</h2>
             <ul class="contact-list">
               <li><i class="fas fa-envelope"></i> woody.git@outlook.com</li>
-              <!-- <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li> -->
-              <!-- <li><i class="fas fa-map-marker-alt"></i> San Francisco, CA</li> -->
               <li><i class="fas fa-globe"></i> woodysudo.github.io</li>
+              <li><i class="fab fa-github"></i> github.com/Woody-sudo</li>
             </ul>
           </div>
           
           <div class="cv-section">
-            <h2>Skills</h2>
+            <h2>Technical Skills</h2>
             <div class="skill-group">
-              <h3>Languages</h3>
+              <h3>Programming Languages</h3>
               <ul class="skill-list">
-                <li>JavaScript (ES6+)</li>
-                <li>TypeScript</li>
-                <li>Python</li>
-                <li>HTML5 & CSS3</li>
-                <li>SQL</li>
+                <li>C++ (Algorithm Implementation)</li>
+                <li>Python (Data Analysis, ML)</li>
+                <li>LaTeX (Academic Writing)</li>
+                <!-- <li>JavaScript/TypeScript</li>
+                <li>HTML5 & CSS3</li> -->
               </ul>
             </div>
             
             <div class="skill-group">
-              <h3>Frameworks & Libraries</h3>
+              <h3>Technologies & Tools</h3>
               <ul class="skill-list">
-                <li>React & Redux</li>
-                <li>Node.js & Express</li>
-                <li>Django</li>
-                <li>Flask</li>
-                <li>Vue.js</li>
+                <li>Server Operations (Linux)</li>
+                <li>Docker & Containerization</li>
+                <li>Git & Version Control</li>
+                <!-- <li>TensorFlow & PyTorch</li> -->
+                <li>Data Visualization</li>
               </ul>
             </div>
             
             <div class="skill-group">
-              <h3>Tools & Technologies</h3>
+              <h3>Academic Skills</h3>
               <ul class="skill-list">
-                <li>Git & GitHub</li>
-                <li>Docker</li>
-                <li>AWS & Azure</li>
-                <li>MongoDB</li>
-                <li>PostgreSQL</li>
-                <li>GraphQL</li>
+                <li>Research Methodology</li>
+                <li>Scientific Literature Review</li>
+                <li>Algorithm Analysis</li>
+                <li>Statistical Analysis</li>
+                <li>Academic Writing</li>
               </ul>
             </div>
           </div>
@@ -85,7 +108,7 @@
             <h2>Languages</h2>
             <ul class="language-list">
               <li>
-                <span>English</span>
+                <span>English (Academic)</span>
                 <div class="language-level">
                   <span class="filled"></span>
                   <span class="filled"></span>
@@ -95,23 +118,13 @@
                 </div>
               </li>
               <li>
-                <span>Spanish</span>
+                <span>Chinese (Native)</span>
                 <div class="language-level">
                   <span class="filled"></span>
                   <span class="filled"></span>
                   <span class="filled"></span>
-                  <span></span>
-                  <span></span>
-                </div>
-              </li>
-              <li>
-                <span>French</span>
-                <div class="language-level">
                   <span class="filled"></span>
                   <span class="filled"></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
                 </div>
               </li>
             </ul>
@@ -122,59 +135,7 @@
         <div class="cv-main">
           <div class="cv-section">
             <h2>Profile</h2>
-            <p>Experienced Full-Stack Developer with a proven track record of building scalable web applications and optimizing user experiences. Skilled in both frontend and backend development with expertise in modern JavaScript frameworks, cloud services, and database design. Passionate about clean code, performance optimization, and staying current with emerging technologies.</p>
-          </div>
-          
-          <div class="cv-section">
-            <h2>Work Experience</h2>
-            
-            <div class="experience-item">
-              <div class="experience-header">
-                <div>
-                  <h3>Senior Full-Stack Developer</h3>
-                  <h4>TechInnovate Inc.</h4>
-                </div>
-                <span class="date">2022 - Present</span>
-              </div>
-              <ul>
-                <li>Led development of a microservices architecture that improved system performance by 40%</li>
-                <li>Implemented CI/CD pipelines reducing deployment time from days to minutes</li>
-                <li>Mentored junior developers and conducted code reviews to maintain quality standards</li>
-                <li>Designed and implemented RESTful APIs serving over 1 million requests daily</li>
-              </ul>
-            </div>
-            
-            <div class="experience-item">
-              <div class="experience-header">
-                <div>
-                  <h3>Frontend Developer</h3>
-                  <h4>WebSolutions Ltd.</h4>
-                </div>
-                <span class="date">2020 - 2022</span>
-              </div>
-              <ul>
-                <li>Developed responsive user interfaces using React and Redux</li>
-                <li>Improved website performance scores by 30% through optimization techniques</li>
-                <li>Collaborated with UX designers to implement intuitive user experiences</li>
-                <li>Integrated third-party APIs and services into web applications</li>
-              </ul>
-            </div>
-            
-            <div class="experience-item">
-              <div class="experience-header">
-                <div>
-                  <h3>Junior Developer</h3>
-                  <h4>StartupHub</h4>
-                </div>
-                <span class="date">2018 - 2020</span>
-              </div>
-              <ul>
-                <li>Built and maintained custom WordPress themes and plugins</li>
-                <li>Assisted in the development of mobile-responsive websites</li>
-                <li>Debugged and resolved cross-browser compatibility issues</li>
-                <li>Participated in agile development processes and daily stand-ups</li>
-              </ul>
-            </div>
+            <p>ML Researcher and Developer with a strong physics background. Proficient in server operations, algorithm implementation with C++/Python, and Docker containerization. Experienced in academic writing using LaTeX for research papers and technical documentation. Self-motivated learner with a passion for understanding the theoretical foundations of machine learning algorithms.</p>
           </div>
           
           <div class="cv-section">
@@ -183,81 +144,120 @@
             <div class="education-item">
               <div class="education-header">
                 <div>
-                  <h3>Master of Computer Science</h3>
-                  <h4>Stanford University</h4>
+                  <h3>Bachelor of Physics</h3>
+                  <h4>University of California, Berkeley</h4>
                 </div>
-                <span class="date">2016 - 2018</span>
+                <span class="date">2024 - Present</span>
               </div>
-              <p>Specialization in Human-Computer Interaction and Machine Learning</p>
+              <p>Focus on theoretical physics and computational methods in physical systems</p>
             </div>
             
             <div class="education-item">
               <div class="education-header">
                 <div>
-                  <h3>Bachelor of Computer Science</h3>
-                  <h4>University of California, Berkeley</h4>
+                  <h3>Self-Studied Computer Science Courses</h3>
                 </div>
-                <span class="date">2012 - 2016</span>
               </div>
-              <p>Minor in Business Administration. Graduated with honors (GPA: 3.8/4.0)</p>
+              <ul>
+                <li><strong>CS189 (Berkeley)</strong> - Machine Learning</li>
+                <li><strong>COS226 (Princeton)</strong> - Algorithms and Data Structures</li>
+                <!-- <li><strong>MIT OCW 6.S191</strong> - Introduction to Deep Learning</li>
+                <li><strong>Stanford CS224N</strong> - Natural Language Processing with Deep Learning</li> -->
+              </ul>
             </div>
           </div>
           
           <div class="cv-section">
-            <h2>Certifications</h2>
+            <h2>Technical Expertise</h2>
             
-            <div class="certification-grid">
-              <div class="certification-item">
-                <i class="fas fa-certificate"></i>
+            <div class="experience-item">
+              <div class="experience-header">
                 <div>
-                  <h4>AWS Certified Solutions Architect</h4>
-                  <p>Amazon Web Services, 2023</p>
+                  <h3>Server Operations</h3>
                 </div>
               </div>
-              
-              <div class="certification-item">
-                <i class="fas fa-certificate"></i>
+              <ul>
+                <li>3+ years of experience maintaining and optimizing Linux servers</li>
+                <li>Configured and managed web servers, databases, and application deployments</li>
+                <li>Implemented security protocols and monitoring systems for server health</li>
+                <li>Experience with cloud platforms including AWS and Tencent Cloud</li>
+              </ul>
+            </div>
+            
+            <div class="experience-item">
+              <div class="experience-header">
                 <div>
-                  <h4>Google Professional Cloud Developer</h4>
-                  <p>Google Cloud, 2022</p>
+                  <h3>Programming & Development</h3>
                 </div>
               </div>
-              
-              <div class="certification-item">
-                <i class="fas fa-certificate"></i>
+              <ul>
+                <li>Proficient in C++ for algorithm implementation and computational physics</li>
+                <li>Python expertise for data analysis, machine learning, and scientific computing</li>
+                <li>Developed custom tools for data processing and visualization</li>
+                <li>Experience with version control systems and collaborative development</li>
+              </ul>
+            </div>
+            
+            <div class="experience-item">
+              <div class="experience-header">
                 <div>
-                  <h4>Certified Scrum Master</h4>
-                  <p>Scrum Alliance, 2021</p>
+                  <h3>Docker & Containerization</h3>
                 </div>
               </div>
-              
-              <div class="certification-item">
-                <i class="fas fa-certificate"></i>
+              <ul>
+                <li>Created Docker images for reproducible research environments</li>
+                <!-- <li>Implemented multi-container applications using Docker Compose</li>
+                <li>Developed CI/CD pipelines for automated testing and deployment</li>
+                <li>Experience with container orchestration for scalable applications</li> -->
+              </ul>
+            </div>
+            
+            <div class="experience-item">
+              <div class="experience-header">
                 <div>
-                  <h4>React Developer Certification</h4>
-                  <p>Meta, 2020</p>
+                  <h3>LaTeX & Academic Writing</h3>
                 </div>
               </div>
+              <ul>
+                <li>Proficient in LaTeX for academic papers, reports, and presentations</li>
+                <li>Experience with BibTeX for reference management and citation</li>
+                <li>Created custom LaTeX templates for various document types</li>
+                <li>Familiar with academic publishing workflows and standards</li>
+              </ul>
             </div>
           </div>
           
           <div class="cv-section">
             <h2>Projects</h2>
             
-            <div class="projects-grid">
+            <!-- <div class="projects-grid">
               <div class="project-item">
-                <h3>E-Commerce Platform</h3>
-                <p>Full-stack online marketplace with payment processing, inventory management, and analytics dashboard.</p>
-                <p><strong>Technologies:</strong> React, Node.js, MongoDB, Stripe API</p>
+                <h3>ML Research Environment</h3>
+                <p>Developed a containerized environment for machine learning research with reproducible experiments and automated result tracking.</p>
+                <p><strong>Technologies:</strong> Docker, Python, TensorFlow, Git LFS</p>
                 <a href="portfolio.html#project1" class="btn-text">View Details</a>
-              </div>
+              </div> -->
+              
+              <!-- <div class="project-item">
+                <h3>Physics Simulation Framework</h3>
+                <p>C++ framework for simulating complex physical systems with visualization capabilities.</p>
+                <p><strong>Technologies:</strong> C++, OpenGL, CUDA, CMake</p>
+                <a href="portfolio.html#project2" class="btn-text">View Details</a>
+              </div> -->
               
               <div class="project-item">
-                <h3>AI Data Visualization</h3>
-                <p>Interactive tool for visualizing complex machine learning models and datasets.</p>
-                <p><strong>Technologies:</strong> Python, D3.js, TensorFlow, Flask</p>
-                <a href="portfolio.html#project2" class="btn-text">View Details</a>
+                <h3>Academic Paper Template System</h3>
+                <p>Comprehensive LaTeX(KaTeX) template system based on <a href="https://yueque.com" target="_blank" rel="noopener">yueque.com</a> for academic papers with automatic Math Notes management.</p>
+                <p><strong>Technologies:</strong> LaTeX, BibTeX, Python scripts</p>
+                <a href="portfolio.html#project3" class="btn-text">View Details</a>
               </div>
+              
+              <!-- <div class="project-item">
+                <h3>Server Monitoring Dashboard</h3>
+                <p>Real-time monitoring system for server performance and health metrics with alert capabilities.</p>
+                <p><strong>Technologies:</strong> Node.js, Prometheus, Grafana, Docker</p>
+                <a href="portfolio.html#project4" class="btn-text">View Details</a>
+              </div> -->
             </div>
           </div>
         </div>
@@ -266,9 +266,31 @@
   </section>
 
   <!-- Footer -->
-  <!-- (Same as index.html) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="index.html"><span>Woody</span>-Sudo</a>
+          <p>ML Research & Development</p>
+        </div>
+        <div class="footer-nav">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Woody-sudo. All rights reserved.</p>
+        <p>Last updated: May 26, 2025</p>
+      </div>
+    </div>
+  </footer>
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/theme-toggle.js"></script>
+  <script src="assets/js/background-effect.js"></script>
 </body>
 </html>
