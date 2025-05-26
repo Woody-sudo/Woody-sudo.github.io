@@ -144,22 +144,29 @@ ul {
   transition: transform 0.3s ease;
   border-radius: 2px;
   box-shadow: 0 2px 4px rgba(var(--primary-rgb), 0.2);
+  opacity: 1;
+  visibility: visible;
 }
 
 .nav-links a::after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -4px;
   width: 100%;
   height: 2px;
   background-color: var(--primary-color);
   transform: scaleX(0);
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .nav-links a:hover::after {
   transform: scaleX(1);
+  opacity: 1;
+  visibility: visible;
 }
 
 .theme-toggle {
@@ -184,7 +191,7 @@ ul {
 
 /* Hero Section */
 .hero {
-  padding: var(--space-xxl) 0;
+  padding: calc(80px + var(--space-xxl)) 0 var(--space-xxl);
   overflow: hidden;
 }
 
@@ -303,7 +310,7 @@ ul {
 
 /* About Section */
 .about {
-  padding: var(--space-xxl) 0;
+  padding: calc(80px + var(--space-xxl)) 0 var(--space-xxl);
   background-color: var(--color-background-alt);
 }
 
@@ -374,7 +381,7 @@ ul {
 
 /* Featured Projects Section */
 .featured-projects {
-  padding: var(--space-xxl) 0;
+  padding: calc(80px + var(--space-xxl)) 0 var(--space-xxl);
 }
 
 .project-cards {
@@ -442,7 +449,7 @@ ul {
 
 /* Recent Posts Section */
 .recent-posts {
-  padding: var(--space-xxl) 0;
+  padding: calc(80px + var(--space-xxl)) 0 var(--space-xxl);
   background-color: var(--color-background-alt);
 }
 
@@ -491,7 +498,7 @@ ul {
 
 /* Contact Section */
 .contact {
-  padding: var(--space-xxl) 0;
+  padding: calc(80px + var(--space-xxl)) 0 var(--space-xxl);
 }
 
 .contact-content {
@@ -669,7 +676,7 @@ ul {
   color: white;
   padding: var(--space-xl) 0;
   text-align: center;
-  margin-top: 60px; /* Add margin to account for fixed header */
+  margin-top: 60px;
 }
 
 .cv-intro h1 {
@@ -684,7 +691,7 @@ ul {
 }
 
 .cv-content {
-  padding-top: 20px; /* Reduce top padding since we added margin to header */
+  padding-top: 20px;
 }
 
 .cv-grid {
@@ -998,4 +1005,46 @@ ul {
     flex-direction: column;
     gap: var(--space-sm);
   }
+}
+
+/* Add padding to all main content sections */
+.hero,
+.about,
+.featured-projects,
+.recent-posts,
+.contact,
+.cv-content,
+.portfolio-content,
+.blog-content {
+  padding-top: 80px; /* Add consistent top padding for all main content sections */
+}
+
+/* Adjust specific sections that already have padding */
+.about {
+  padding: calc(80px + var(--space-xxl)) 0 var(--space-xxl);
+}
+
+.featured-projects {
+  padding: calc(80px + var(--space-xxl)) 0 var(--space-xxl);
+}
+
+.recent-posts {
+  padding: calc(80px + var(--space-xxl)) 0 var(--space-xxl);
+}
+
+.contact {
+  padding: calc(80px + var(--space-xxl)) 0 var(--space-xxl);
+}
+
+/* CV Page Specific Styles */
+.cv-header {
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+  color: white;
+  padding: var(--space-xl) 0;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.cv-content {
+  padding-top: 20px;
 }
