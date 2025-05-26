@@ -1,0 +1,33 @@
+#background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bg-square {
+  position: absolute;
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* 深色模式样式 */
+body.dark-mode .bg-square {
+  background-color: rgba(30, 60, 120, 0.3);
+  box-shadow: 0 0 15px rgba(50, 100, 255, 0.5);
+}
+
+/* 浅色模式样式 */
+body:not(.dark-mode) .bg-square {
+  background-color: rgba(200, 230, 255, 0.2);
+  box-shadow: 0 0 10px rgba(150, 200, 255, 0.4);
+}
+
+.bg-square.active {
+  opacity: 1;
+}
