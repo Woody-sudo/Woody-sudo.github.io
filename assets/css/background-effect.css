@@ -10,29 +10,43 @@
   background: transparent;
 }
 
-.bg-square {
+.particle {
   position: absolute;
-  border-radius: 2px;
-  opacity: 0;
-  transition: opacity 0.3s ease, background-color 0.2s ease, box-shadow 0.2s ease;
-  z-index: 0; /* 从 z-index: 1 改为 z-index: 0 */
+  bottom: 0; /* 从底部开始 */
+  border-radius: 50%; /* 圆形粒子 */
+  opacity: 0; /* 初始不可见，由动画控制 */
+  /* 默认大小，JavaScript 可以动态改变 */
+  width: 10px;
+  height: 10px;
   pointer-events: none;
+  /* 动画由 JavaScript 触发，可以设置不同的延迟和持续时间 */
 }
 
-/* 深色模式样式 - 使用蓝色闪光效果 */
-[data-theme="dark"] .bg-square,
-body.dark-mode .bg-square {
-  background-color: rgba(0, 123, 255, 0.6);
-  box-shadow: 0 0 20px rgba(0, 123, 255, 0.8), 0 0 40px rgba(0, 123, 255, 0.4);
+/* 定义粒子上升和淡出的关键帧动画 */
+@keyframes riseAndFade {
+  0% {
+    transform: translateY(0vh) scale(0.5);
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.2); /* 上升到视口之外 */
+    opacity: 0;
+  }
 }
 
-/* 浅色模式样式 - 使用淡蓝色 */
-[data-theme="light"] .bg-square,
-body:not(.dark-mode) .bg-square {
-  background-color: rgba(0, 123, 255, 0.3);
-  box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+/* 浅色模式下的粒子样式 */
+[data-theme="light"] .particle,
+body:not(.dark-mode) .particle {
+  background-color: rgba(0, 123, 255, 0.5); /* 淡蓝色 */
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
 }
 
-.bg-square.active {
-  opacity: 1;
+/* 深色模式下的粒子样式 */
+[data-theme="dark"] .particle,
+body.dark-mode .particle {
+  background-color: rgba(100, 180, 255, 0.7); /* 深色模式下的亮蓝色 */
+  box-shadow: 0 0 15px rgba(100, 180, 255, 0.5), 0 0 5px rgba(200, 220, 255, 0.3);
 }
