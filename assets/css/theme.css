@@ -2,6 +2,7 @@
 html {
   background-color: #121212; /* Default to dark background */
   color-scheme: dark light; /* Support system preference */
+  position: relative; /* Required for z-index to work */
   z-index: -1000; /* Ensure theme background is at the lowest layer */
 }
 
@@ -9,6 +10,7 @@ body {
   background-color: #121212; /* Fallback dark background */
   opacity: 0; /* Hide until theme is loaded */
   transition: opacity 0.1s ease-in;
+  position: relative; /* Required for z-index to work */
   z-index: -999; /* Keep body background low but above html */
 }
 
@@ -102,11 +104,13 @@ body.theme-loaded {
 /* Additional theme flash prevention */
 html[data-theme="dark"] {
   background-color: #121212;
+  position: relative; /* Required for z-index to work */
   z-index: -1000; /* Maintain lowest layer for dark theme */
 }
 
 html[data-theme="light"] {
   background-color: #fff;
+  position: relative; /* Required for z-index to work */
   z-index: -1000; /* Maintain lowest layer for light theme */
 }
 
@@ -119,5 +123,11 @@ html, body, #background-animation {
 .background-effect, 
 .background-animation,
 #background-animation {
+  position: fixed; /* Use fixed positioning for background effects */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: -100; /* Higher than theme background but still behind content */
+  pointer-events: none; /* Don't interfere with user interactions */
 }
