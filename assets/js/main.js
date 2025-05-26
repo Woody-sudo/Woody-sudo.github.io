@@ -103,28 +103,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const linkPath = link.getAttribute('href');
     if (currentPage.includes(linkPath) && linkPath !== 'index.html') {
       link.classList.add('active');
-    } else if ((currentPage.endsWith('/') || currentPage.endsWith('/index.html')) && linkPath === 'index.html') {
+    } else if (currentPage.endsWith('/') && linkPath === 'index.html') {
       link.classList.add('active');
     }
   });
-
-  // Fix navigation links overlapping when at top of page
-  const header = document.querySelector('.site-header');
-  const navLinksContainer = document.querySelector('.nav-links');
-  
-  function adjustNavPosition() {
-    if (window.scrollY > 0) {
-      // When scrolled down, keep normal positioning
-      navLinksContainer.style.position = 'relative';
-      navLinksContainer.style.zIndex = '1';
-    } else {
-      // When at the top, ensure nav links don't overlap with content
-      navLinksContainer.style.position = 'relative';
-      navLinksContainer.style.zIndex = '1';
-    }
-  }
-  
-  window.addEventListener('scroll', adjustNavPosition);
-  // Initialize position on page load
-  adjustNavPosition();
 });
