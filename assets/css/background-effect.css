@@ -13,7 +13,7 @@
 .particle {
   position: absolute;
   bottom: 0; /* 从底部开始 */
-  border-radius: 50%; /* 圆形粒子 */
+  border-radius: 2px; /* 从圆形粒子改为方形粒子 */
   opacity: 0; /* 初始不可见，由动画控制 */
   /* 默认大小，JavaScript 可以动态改变 */
   width: 10px;
