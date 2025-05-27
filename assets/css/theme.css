@@ -114,6 +114,24 @@ html[data-theme="light"] {
   z-index: -1000; /* Maintain lowest layer for light theme */
 }
 
+/* Logo highlight styles */
+.logo a .highlight {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* Dark mode specific highlight */
+[data-theme="dark"] .logo a .highlight {
+  color: var(--color-primary);
+  text-shadow: 0 0 8px rgba(77, 171, 247, 0.5);
+}
+
+/* Light mode specific highlight */
+[data-theme="light"] .logo a .highlight {
+  color: var(--color-primary);
+  text-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
 /* Smooth theme transitions */
 html, body, #background-animation {
   transition: background-color var(--transition-fast);
