@@ -9,8 +9,26 @@
   <meta property="og:description" content="Research portfolio and RA profile: diffusion, flow matching, ODE/SDE probability transport, and scientific modeling.">
   <meta property="og:type" content="website">
   <title>Chen Mu — Research & Scientific ML</title>
+  <script>
+    // Apply the effective theme before CSS loads to avoid a light-theme flash.
+    (() => {
+      try {
+        const storedTheme = localStorage.getItem('theme');
+        const theme = storedTheme === 'light' || storedTheme === 'dark'
+          ? storedTheme
+          : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+        document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#111715' : '#f7f6f2';
+      } catch {
+        // CSS still follows the system preference if storage is unavailable.
+      }
+    })();
+  </script>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/style.css">
+  <noscript><style>.theme-toggle { display: none; }</style></noscript>
+  <script src="assets/theme.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -18,12 +36,15 @@
   <header class="site-header">
     <div class="header-inner">
       <a class="site-name" href="#top">Chen Mu</a>
-      <nav aria-label="Primary navigation">
-        <a href="#research">Research</a>
-        <a href="#modeling">Modeling</a>
-        <a href="#profile">Profile</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div class="header-actions">
+        <nav aria-label="Primary navigation">
+          <a href="#research">Research</a>
+          <a href="#modeling">Modeling</a>
+          <a href="#profile">Profile</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">Dark</button>
+      </div>
     </div>
   </header>
 
