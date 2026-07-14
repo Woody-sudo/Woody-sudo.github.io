@@ -22,8 +22,11 @@ for (const target of targets) {
 
   if (/^(?:https?:|mailto:|tel:)/.test(target)) continue;
 
+  // Cache-busting queries and fragments are URL metadata, not filesystem names.
+  const localTarget = target.replace(/[?#].*$/, '');
+
   try {
-    await access(resolve(root, target));
+    await access(resolve(root, localTarget));
   } catch {
     failures.push(`Missing local file: ${target}`);
   }

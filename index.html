@@ -26,29 +26,36 @@
     })();
   </script>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/style.css">
-  <noscript><style>.theme-toggle { display: none; }</style></noscript>
-  <script src="assets/theme.js" defer></script>
+  <link rel="stylesheet" href="assets/style.css?v=20260714-2">
+  <script src="assets/theme.js?v=20260714-2" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <input class="theme-input" type="radio" name="theme" id="theme-light" value="light" aria-label="Use light theme">
+  <input class="theme-input" type="radio" name="theme" id="theme-dark" value="dark" aria-label="Use dark theme">
 
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="site-name" href="#top">Chen Mu</a>
-      <div class="header-actions">
-        <nav aria-label="Primary navigation">
-          <a href="#research">Research</a>
-          <a href="#modeling">Modeling</a>
-          <a href="#profile">Profile</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">Dark</button>
+  <div class="site-shell">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="site-name" href="#top">Chen Mu</a>
+        <div class="header-actions">
+          <nav aria-label="Primary navigation">
+            <a href="#research">Research</a>
+            <a href="#modeling">Modeling</a>
+            <a href="#profile">Profile</a>
+            <a href="#contact">Contact</a>
+          </nav>
+          <div class="theme-options" role="radiogroup" aria-label="Color theme">
+            <label for="theme-light">Light</label>
+            <span aria-hidden="true">/</span>
+            <label for="theme-dark">Dark</label>
+          </div>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main id="main" class="page">
+    <main id="main" class="page">
     <section class="intro" id="top" aria-labelledby="intro-title">
       <div class="intro-main">
         <p class="kicker">Physics · Generative Modeling · Scientific ML</p>
@@ -200,11 +207,12 @@
         <p><a href="mailto:chenm369@mail2.sysu.edu.cn">chenm369@mail2.sysu.edu.cn</a> · <a href="https://github.com/Woody-sudo">GitHub</a> · <a href="assets/docs/chen-mu-cv.pdf">CV (PDF)</a></p>
       </div>
     </section>
-  </main>
+    </main>
 
-  <footer class="site-footer">
-    <p>Chen Mu · Physics / AI / Scientific Modeling</p>
-    <p>Last updated July 2026</p>
-  </footer>
+    <footer class="site-footer">
+      <p>Chen Mu · Physics / AI / Scientific Modeling</p>
+      <p>Last updated July 2026</p>
+    </footer>
+  </div>
 </body>
 </html>

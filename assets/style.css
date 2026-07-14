@@ -47,6 +47,36 @@
   }
 }
 
+#theme-light:checked ~ .site-shell {
+  color-scheme: light;
+  --background: #f7f6f2;
+  --surface: #ffffff;
+  --text: #202522;
+  --muted: #626964;
+  --line: #d8dcd8;
+  --accent: #245b46;
+  --accent-soft: #eaf1ed;
+  --header-background: rgba(247, 246, 242, .96);
+  --body-copy: #39413c;
+  --secondary-copy: #414944;
+  --button-hover: #dfeae4;
+}
+
+#theme-dark:checked ~ .site-shell {
+  color-scheme: dark;
+  --background: #111715;
+  --surface: #151d1a;
+  --text: #e7ebe7;
+  --muted: #a7b0aa;
+  --line: #35413b;
+  --accent: #80caa6;
+  --accent-soft: #1b2b24;
+  --header-background: rgba(17, 23, 21, .96);
+  --body-copy: #c9d0cb;
+  --secondary-copy: #bdc6c0;
+  --button-hover: #243a30;
+}
+
 * { box-sizing: border-box; }
 
 html {
@@ -64,6 +94,12 @@ body {
   font-size: 15.5px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+.site-shell {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--text);
 }
 
 a {
@@ -134,25 +170,59 @@ nav a {
 
 nav a:hover { color: var(--accent); }
 
-.theme-toggle {
-  padding: 2px 0;
-  border: 0;
-  border-bottom: 1px solid transparent;
-  background: transparent;
+.theme-input {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.theme-options {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   color: var(--muted);
-  font: inherit;
   font-size: 13px;
+}
+
+.theme-options label {
+  padding: 2px 1px;
+  border-bottom: 1px solid transparent;
   cursor: pointer;
 }
 
-.theme-toggle:hover {
-  border-bottom-color: currentColor;
+.theme-options label:hover {
   color: var(--accent);
 }
 
-.theme-toggle:focus-visible {
+#theme-light:checked ~ .site-shell label[for="theme-light"],
+#theme-dark:checked ~ .site-shell label[for="theme-dark"] {
+  border-bottom-color: currentColor;
+  color: var(--text);
+  font-weight: 600;
+}
+
+#theme-light:focus-visible ~ .site-shell label[for="theme-light"],
+#theme-dark:focus-visible ~ .site-shell label[for="theme-dark"] {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
+}
+
+@media (prefers-color-scheme: light) {
+  #theme-light:not(:checked) + #theme-dark:not(:checked) ~ .site-shell label[for="theme-light"] {
+    border-bottom-color: currentColor;
+    color: var(--text);
+    font-weight: 600;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  #theme-light:not(:checked) + #theme-dark:not(:checked) ~ .site-shell label[for="theme-dark"] {
+    border-bottom-color: currentColor;
+    color: var(--text);
+    font-weight: 600;
+  }
 }
 
 .page,
