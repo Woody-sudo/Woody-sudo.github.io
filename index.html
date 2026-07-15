@@ -122,16 +122,8 @@
               <dd>CelebA 64×64; Modal L40S; independent ResNet-18 evaluator.</dd>
             </div>
             <div>
-              <dt>Conditional adherence</dt>
-              <dd>Joint-target accuracy increased from 3.1% at <i>w</i> = 0 to 94.5% at <i>w</i> = 2. This result indicates stronger adherence, not general image quality.</dd>
-            </div>
-            <div>
-              <dt>Sampler comparison</dt>
-              <dd>At matched NFE, Heun showed no Pareto improvement.</dd>
-            </div>
-            <div>
-              <dt>CRH-CFG probe</dt>
-              <dd>Across 1,000 paired seeds per target, the descriptive result was 98.40% → 98.80% (+0.4 pp). It does not demonstrate improved preservation or conditional quality.</dd>
+              <dt>Abstract</dt>
+              <dd>Classifier-free guidance (CFG) usually uses a fixed scale and cannot respond to sample-specific generation states. We ask whether a frozen conditional-unconditional field pair can instead support online adaptation without additional generator evaluations. We introduce Constraint-aware Receding-Horizon Classifier-Free Guidance (CRH-CFG), a constrained receding-horizon search over scalar CFG actions. The search proceeds in three stages. First, it affinely reuses the field pair to construct candidate velocities and closed-form clean-endpoint estimates. Second, a frozen evaluator scores these endpoints; target-margin and protected-logit-drift constraints define the feasible set, within which the algorithm selects the action closest to ordinary conditioning and the previous choice, with a fallback when none is feasible. Third, it executes the selected action for one Heun macro-step, recomputes fields at the predicted state, and searches again after correction. This training-free search adds evaluator work but no additional generator evaluations and retains the original Heun discretization. CelebA experiments show modest adherence improvement at low overhead, while preservation and conditional quality gains remain unsupported.</dd>
             </div>
           </dl>
 
