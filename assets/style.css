@@ -259,6 +259,12 @@ h1 {
   letter-spacing: -.035em;
 }
 
+#intro-title {
+  font-family: "IBM Plex Sans", var(--sans);
+  font-style: italic;
+  font-weight: 700;
+}
+
 .intro-lede {
   max-width: 660px;
   margin: 14px 0 0;
