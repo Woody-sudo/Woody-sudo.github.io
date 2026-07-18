@@ -366,6 +366,26 @@ p { margin: 0 0 12px; }
 
 .project > .meta { margin-bottom: 8px; }
 
+.method-overview {
+  margin: 24px 0 0;
+}
+
+.method-overview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: #fff;
+}
+
+.method-overview figcaption {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
 .note,
 .disclosure,
 .status {
