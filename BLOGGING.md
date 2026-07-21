@@ -25,9 +25,20 @@ npm run new:post -- flow-matching
 
 The helper prefixes today's date, producing
 `content/blog/2026-07-21-flow-matching/index.md`. The directory name is the
-article URL, so this example is published at `/2026-07-21-flow-matching/`.
+article URL segment, so this example is published at
+`/blog/2026-07-21-flow-matching/`.
 Renaming the directory changes the URL; the front matter does not need a
 `slug` field.
+
+When an existing article URL changes, preserve the old path with an alias:
+
+```yaml
+aliases:
+  - /old-article-path/
+```
+
+Hugo emits a static fallback redirect at the old path and keeps the new URL as
+the canonical address.
 
 ```md
 ---

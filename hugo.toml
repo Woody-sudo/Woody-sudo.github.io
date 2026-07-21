@@ -9,7 +9,7 @@ enableRobotsTXT = true
   pagerSize = 10
 
 [permalinks]
-  blog = '/:contentbasename/'
+  blog = '/blog/:contentbasename/'
 
 [outputs]
   home = ['HTML', 'RSS', 'JSON']

@@ -2,6 +2,8 @@
 title: "When does weak-to-strong diffusion actually help?"
 date: 2026-07-21
 description: "A first-principles look at the W2SD hypothesis, an analytic counterexample, and a small SDXL reproduction."
+aliases:
+  - /2026-07-21-w2sd/
 tags:
   - W2SD
   - diffusion models
