@@ -1,18 +1,24 @@
-/** Validate the static research site without third-party dependencies. */
+/** Validate the Hugo-generated research site without third-party dependencies. */
 
 import { access, readFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const htmlPath = resolve(root, 'index.html');
-const cssPath = resolve(root, 'assets/style.css');
+const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const siteRoot = resolve(projectRoot, 'public');
+const htmlPath = resolve(siteRoot, 'index.html');
+const cssPath = resolve(siteRoot, 'assets/style.css');
 const html = await readFile(htmlPath, 'utf8');
 const css = await readFile(cssPath, 'utf8');
 
 const failures = [];
-const ids = new Set([...html.matchAll(/\bid=["']([^"']+)["']/g)].map((match) => match[1]));
-const targets = [...html.matchAll(/\b(?:href|src)=["']([^"']+)["']/g)].map((match) => match[1]);
+const attributeValue = (match) => match[1] ?? match[2] ?? match[3];
+const ids = new Set(
+  [...html.matchAll(/\bid=(?:"([^"]+)"|'([^']+)'|([^\s>]+))/g)].map(attributeValue),
+);
+const targets = [
+  ...html.matchAll(/\b(?:href|src)=(?:"([^"]+)"|'([^']+)'|([^\s>]+))/g),
+].map(attributeValue);
 
 for (const target of targets) {
   if (target.startsWith('#')) {
@@ -24,9 +30,14 @@ for (const target of targets) {
 
   // Cache-busting queries and fragments are URL metadata, not filesystem names.
   const localTarget = target.replace(/[?#].*$/, '');
+  const relativeTarget = localTarget.replace(/^\/+/, '');
+  const candidate = resolve(siteRoot, relativeTarget);
+  const filesystemTarget = localTarget.endsWith('/')
+    ? resolve(candidate, 'index.html')
+    : candidate;
 
   try {
-    await access(resolve(root, localTarget));
+    await access(filesystemTarget);
   } catch {
     failures.push(`Missing local file: ${target}`);
   }
@@ -34,10 +45,10 @@ for (const target of targets) {
 
 const structuralChecks = [
   ['doctype', /<!doctype html>/i],
-  ['language declaration', /<html\s+lang=["'][^"']+["']/i],
+  ['language declaration', /<html\s+[^>]*\blang=(?:"[^"]+"|'[^']+'|[^\s>]+)/i],
   ['main landmark', /<main\b/i],
   ['page title', /<title>[^<]+<\/title>/i],
-  ['meta description', /<meta\s+name=["']description["']/i],
+  ['meta description', /<meta\s+[^>]*\bname=(?:"description"|'description'|description)(?:\s|>)/i],
 ];
 
 for (const [label, pattern] of structuralChecks) {
