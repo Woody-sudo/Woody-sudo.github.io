@@ -143,11 +143,11 @@ W2SD also increased RGB clipping from 0.0268 percent to 1.1791 percent, along wi
 
 Outlier diagnostics leave the PickScore result almost unchanged. Across the 100 prompts, the mean change is $+0.0186$, the median is $+0.0053$, and the 10 percent trimmed mean is $+0.0250$. Removing any one prompt leaves the mean between $+0.0099$ and $+0.0341$.
 
-The positive and negative changes are simply mixed. This ruled out the easiest explanation: one spectacular failure did not drag the mean down.
+The positive and negative changes are simply mixed. This makes the easiest explanation—an unusually bad seed block—less plausible: one spectacular failure did not drag the mean down.
 
 Seed variation gave me a second possible explanation. On the first ten prompts with four shared seeds, only five kept the same nonzero PickScore sign in all four runs. Perhaps the weak aggregate result was just an unlucky seed block.
 
-I fixed four new seeds before generation and reran the same ten prompts. The discovery and held-out blocks preserved the prompt-level mean sign for 9 of 10 prompts. Their PickScore effects had Pearson correlation $0.92$ and Spearman correlation $0.94$. The prompt pattern survived.
+I fixed four new seeds before generation and reran the same ten prompts. The discovery and held-out seed blocks preserved the prompt-level mean sign for 9 of 10 prompts. Their PickScore effects had Pearson correlation $0.92$ and Spearman correlation $0.94$. The prompt pattern survived.
 
 The individual images tell a messier story. Seven of the ten prompts contained both positive and negative seed outcomes across the eight runs. A single image can reverse the apparent winner even when the prompt-level average is repeatable.
 
@@ -203,7 +203,7 @@ This remains a partial reproduction. The source run covers 100 prompts with one 
 
 A blinded A/B comparison is now the most direct check on the metric disagreement. I would ask separately about prompt adherence, overall visual preference, and visible artifacts. A correction-strength sweep would connect the SDXL experiment to the analytic overshoot case.
 
-The answer to the title is conditional. W2SD helps when the chosen model contrast exposes part of the strong model's remaining error and the effective correction does not overshoot. In this SDXL run, the change was reproducible enough to survive outlier checks and a held-out seed block, but the evaluators did not agree on whether it was better. That last part still needs people.
+At least in these experiments, the answer is conditional. Reflection helped some evaluators under the source-style setup: HPS and aesthetic score went up, while PickScore barely changed. That does not tell us whether people preferred the images, and the fair-compute comparisons did not establish an advantage at the same NFE or wall-clock time. The seed checks make the pattern less likely to be a fluke, but they do not settle what the images look like to people. A small blinded comparison and a sweep over reflection strength would be the next useful tests.
 
 ## References
 
