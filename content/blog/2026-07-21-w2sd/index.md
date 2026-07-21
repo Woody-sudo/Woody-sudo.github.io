@@ -205,7 +205,7 @@ This remains a partial reproduction. The source run covers 100 prompts with one 
 
 A blinded A/B comparison is now the most direct check on the metric disagreement. I would ask separately about prompt adherence, overall visual preference, and visible artifacts. A correction-strength sweep would connect the SDXL experiment to the analytic overshoot case.
 
-At least in these experiments, the answer is conditional. Reflection helped some evaluators under the source-style setup: HPS and aesthetic score went up, while PickScore barely changed. That does not tell us whether people preferred the images, and the fair-compute comparisons did not establish an advantage at the same NFE or wall-clock time. The seed checks make the pattern less likely to be a fluke, but they do not settle what the images look like to people. A small blinded comparison and a sweep over reflection strength would be the next useful tests.
+At least in these experiments, the answer is conditional. Reflection helped some evaluators under the source-style setup: HPS and aesthetic score went up, while PickScore barely changed. That does not tell us whether people preferred the images. The seed checks make the pattern less likely to be a fluke, but they do not settle what the images look like to people. A small blinded comparison and a sweep over reflection strength would be the next useful tests.
 
 ## References
 
