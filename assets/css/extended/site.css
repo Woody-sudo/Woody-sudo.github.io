@@ -1,0 +1,214 @@
+:root {
+  /* Mirror the homepage palette so both surfaces read as one site. */
+  --theme: #f7f6f2;
+  --entry: #ffffff;
+  --primary: #202522;
+  --secondary: #626964;
+  --tertiary: #eaf1ed;
+  --content: #39413c;
+  --code-block-bg: #17221e;
+  --code-bg: #eaf1ed;
+  --border: #d8dcd8;
+  --accent: #245b46;
+  --accent-soft: #eaf1ed;
+  --surface: #ffffff;
+  --main-width: 920px;
+  --nav-width: 1180px;
+  --content-gap: 18px;
+}
+
+:root[data-theme="dark"] {
+  --theme: #111715;
+  --entry: #151d1a;
+  --primary: #e7ebe7;
+  --secondary: #a7b0aa;
+  --tertiary: #1b2b24;
+  --content: #c9d0cb;
+  --code-block-bg: #0c1210;
+  --code-bg: #1b2b24;
+  --border: #35413b;
+  --accent: #80caa6;
+  --accent-soft: #1b2b24;
+  --surface: #151d1a;
+}
+
+.list,
+[data-theme="dark"] .list {
+  background: var(--theme);
+}
+
+body {
+  font-size: 15px;
+  line-height: 1.58;
+  letter-spacing: -0.006em;
+}
+
+.nav {
+  min-height: 64px;
+}
+
+.logo a,
+.post-title,
+.post-entry .entry-header h2 {
+  letter-spacing: -0.025em;
+}
+
+.main {
+  padding-top: 18px;
+}
+
+.post-header {
+  margin: 16px auto 28px;
+}
+
+.post-title {
+  font-size: clamp(2rem, 4.2vw, 3.1rem);
+  line-height: 1.02;
+}
+
+.post-content {
+  max-width: 760px;
+  margin-inline: auto;
+  font-size: 1rem;
+}
+
+.post-content h2 {
+  margin-top: 2.2em;
+  font-size: 1.55em;
+  line-height: 1.2;
+}
+
+.post-content h3 {
+  margin-top: 1.8em;
+  font-size: 1.22em;
+}
+
+.post-content a,
+.entry-link:hover + .entry-header h2 {
+  color: var(--accent);
+}
+
+.post-content a:hover,
+.footer a:hover,
+.menu a:hover {
+  color: var(--accent);
+}
+
+.post-content code:not(pre code),
+.terms-tags a,
+.post-tags a {
+  background: var(--accent-soft);
+}
+
+.post-content .katex {
+  color: inherit;
+}
+
+.post-content .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-block: 0.25rem;
+}
+
+.post-content table .katex {
+  font-size: 1em;
+}
+
+details.toc {
+  max-width: 760px;
+  margin: 0 auto 28px;
+  border: 1px solid var(--border);
+  background: transparent;
+}
+
+[data-theme="dark"] details.toc {
+  background: transparent;
+}
+
+:focus-visible {
+  outline-color: var(--accent);
+}
+
+.post-entry {
+  padding: 0 0 28px;
+  margin: 0 0 28px;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  background: transparent;
+}
+
+.post-entry .entry-header h2 {
+  font-size: 1.55rem;
+  line-height: 1.16;
+}
+
+.entry-content {
+  margin-top: 8px;
+  font-size: 0.96rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --gap: 18px;
+    --content-gap: 16px;
+  }
+
+  body {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .nav {
+    min-height: 56px;
+  }
+
+  .header-nav {
+    flex-wrap: nowrap;
+    column-gap: 10px;
+  }
+
+  .logo a {
+    font-size: 21px;
+  }
+
+  .menu {
+    column-gap: 14px;
+  }
+
+  /* The wordmark already links home, so this keeps the mobile header on one line. */
+  .menu li:first-child {
+    display: none;
+  }
+
+  .menu a {
+    font-size: 14px;
+  }
+
+  .main {
+    padding-top: 8px;
+  }
+
+  .post-header {
+    margin-top: 8px;
+    margin-bottom: 20px;
+  }
+
+  .post-title {
+    font-size: clamp(2rem, 9.5vw, 2.3rem);
+  }
+
+  .post-content h2 {
+    margin-top: 1.8em;
+  }
+
+  details.toc {
+    margin-bottom: 20px;
+  }
+
+  .post-entry {
+    padding-bottom: 22px;
+    margin-bottom: 22px;
+  }
+}

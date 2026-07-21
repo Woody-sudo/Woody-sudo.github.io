@@ -1,0 +1,8 @@
+.DS_Store
+.playwright-cli/
+node_modules/
+public/
+resources/_gen/
+.hugo_build.lock
+.hugo_cache/
+.tools/

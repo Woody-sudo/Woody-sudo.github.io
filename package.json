@@ -1,0 +1,11 @@
+{
+  "name": "chen-mu-research-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "HUGO_CACHEDIR=\"$PWD/.hugo_cache\" .tools/hugo --gc --minify --cleanDestinationDir",
+    "dev": "HUGO_CACHEDIR=\"$PWD/.hugo_cache\" .tools/hugo server --buildDrafts --disableFastRender",
+    "new:post": "bash scripts/new-post.sh",
+    "check": "HUGO_CACHEDIR=\"$PWD/.hugo_cache\" .tools/hugo --panicOnWarning --renderToMemory"
+  }
+}

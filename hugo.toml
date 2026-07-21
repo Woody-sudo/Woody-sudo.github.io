@@ -1,0 +1,84 @@
+baseURL = 'https://woody-sudo.github.io/'
+locale = 'en-US'
+title = "Woody's Blog"
+theme = 'PaperMod'
+copyright = '© Chen Mu'
+enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 10
+
+[permalinks]
+  blog = '/:contentbasename/'
+
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
+
+[params]
+  env = 'production'
+  author = 'Chen Mu'
+  description = 'Research notes on generative modeling, scientific machine learning, and physics-inspired AI systems.'
+  mainSections = ['blog']
+  defaultTheme = 'auto'
+  disableThemeToggle = false
+  ShowReadingTime = true
+  ShowBreadCrumbs = true
+  ShowPostNavLinks = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = false
+  ShowFullTextinRSS = true
+  hideFooter = false
+
+  [params.assets]
+    favicon = '/assets/favicon.svg'
+    disableFingerprinting = false
+    theme_color = '#f7f6f2'
+    msapplication_TileColor = '#f7f6f2'
+
+[menu]
+  [[menu.main]]
+    identifier = 'home'
+    name = 'Home'
+    url = '/'
+    weight = 10
+
+  [[menu.main]]
+    identifier = 'blog'
+    name = 'Blog'
+    url = '/blog/'
+    weight = 20
+
+  [[menu.main]]
+    identifier = 'research'
+    name = 'Research'
+    url = '/#research'
+    weight = 30
+
+  [[menu.main]]
+    identifier = 'cv'
+    name = 'CV'
+    url = '/assets/docs/chen-mu-cv.pdf'
+    weight = 40
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)'], ['$', '$']]
+
+    [markup.goldmark.renderer]
+      # Raw HTML is intentionally disabled so Markdown cannot inject scripts.
+      unsafe = false
+
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    noClasses = false
+
+[security]
+  enableInlineShortcodes = false
+  allowContent = ['! ^text/html$']

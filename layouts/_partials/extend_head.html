@@ -1,0 +1,3 @@
+{{- if and .IsPage (eq .Section "blog") }}
+  {{- partialCached "math.html" . }}
+{{- end }}
