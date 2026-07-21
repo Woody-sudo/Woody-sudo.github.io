@@ -177,11 +177,6 @@ details.toc {
     column-gap: 14px;
   }
 
-  /* The wordmark already links home, so this keeps the mobile header on one line. */
-  .menu li:first-child {
-    display: none;
-  }
-
   .menu a {
     font-size: 14px;
   }

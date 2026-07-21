@@ -38,21 +38,15 @@ enableRobotsTXT = true
 
 [menu]
   [[menu.main]]
-    identifier = 'home'
-    name = 'Home'
-    url = '/'
-    weight = 10
-
-  [[menu.main]]
     identifier = 'blog'
     name = 'Blog'
     url = '/blog/'
     weight = 20
 
   [[menu.main]]
-    identifier = 'research'
-    name = 'Research'
-    url = '/#research'
+    identifier = 'home'
+    name = 'Home'
+    url = '/'
     weight = 30
 
   [[menu.main]]
