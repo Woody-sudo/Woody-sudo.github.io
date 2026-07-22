@@ -138,7 +138,7 @@ I care more about that property than about a model behaving perfectly on one ben
 
 ## Policy also belongs to people
 
-### Two systems
+### Two AI systems in *Person of Interest*
 
 In *Person of Interest*, Jonathan Nolan tells a story about two advanced AIs with very different alignments.
 
