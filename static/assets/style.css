@@ -433,6 +433,7 @@ p { margin: 0 0 12px; }
   align-items: center;
   flex: none;
   gap: 6px;
+  margin-right: 8px;
   font-size: 14px;
 }
 
