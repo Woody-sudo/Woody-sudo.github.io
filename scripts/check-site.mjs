@@ -49,10 +49,16 @@ const structuralChecks = [
   ['main landmark', /<main\b/i],
   ['page title', /<title>[^<]+<\/title>/i],
   ['meta description', /<meta\s+[^>]*\bname=(?:"description"|'description'|description)(?:\s|>)/i],
+  ['latest writing section', /<section\s+[^>]*\bid=(?:"writing"|'writing'|writing)(?:\s|>)/i],
 ];
 
 for (const [label, pattern] of structuralChecks) {
   if (!pattern.test(html)) failures.push(`Missing ${label}`);
+}
+
+const latestPostCount = [...html.matchAll(/\bclass=(?:"read-more"|'read-more'|read-more)(?:\s|>)/g)].length;
+if (latestPostCount !== 2) {
+  failures.push(`Expected 2 latest blog posts on homepage, found ${latestPostCount}`);
 }
 
 const braceBalance = [...css].reduce((balance, character) => {

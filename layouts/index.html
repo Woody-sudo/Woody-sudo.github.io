@@ -29,7 +29,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@1,700&display=swap">
-  <link rel="stylesheet" href="assets/style.css?v=20260718-1">
+  <link rel="stylesheet" href="assets/style.css?v=20260723-2">
   <script src="assets/theme.js?v=20260714-2" defer></script>
 </head>
 <body>
@@ -47,7 +47,7 @@
             <a href="#research">Research</a>
             <a href="#modeling">Modeling</a>
             <a href="#profile">Profile</a>
-            <a href="/blog/">Blog</a>
+            <a href="{{ "/blog/" | relURL }}">Blog</a>
             <a href="#contact">Contact</a>
           </nav>
           <div class="theme-options" role="radiogroup" aria-label="Color theme">
@@ -171,6 +171,28 @@
         </div>
       </div>
     </section>
+
+    {{ $latestPosts := first 2 ((where .Site.RegularPages "Section" "blog").ByDate.Reverse) }}
+    {{ with $latestPosts }}
+    <section class="section writing-section" id="writing" aria-labelledby="writing-title">
+      <div class="section-content">
+        <div class="section-heading">
+          <h2 id="writing-title">Latest Blog</h2>
+          <a class="view-all" href="{{ "/blog/" | relURL }}">View All <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="writing-list">
+          {{ range . }}
+          <article>
+            <p class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 Jan 2006" }}</time> · {{ .ReadingTime }} min read</p>
+            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            {{ with .Description }}<p>{{ . }}</p>{{ end }}
+            <a class="read-more" href="{{ .RelPermalink }}" aria-label="Read {{ .Title }}">Read article <span aria-hidden="true">→</span></a>
+          </article>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+    {{ end }}
 
     <section class="section" id="profile" aria-labelledby="profile-title">
       <div class="section-label">Profile</div>
