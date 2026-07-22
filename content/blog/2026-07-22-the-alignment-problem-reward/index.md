@@ -184,7 +184,6 @@ Finch's human-in-the-loop arrangement is hardly clean. He and Reese misread peop
 ![Harold Finch](Harold_Finch_Profile.webp)
 
 > Bad code applies to machines and that humans can evolve...
-> 
 > -- Harold Finch
 
 This part of the show has stayed with me. Finch wants the Machine to value individual lives without requiring those lives to become predictable first. Greer gives Samaritan an image of an orderly society and lets it decide what each person is for. I particularly agree with Finch because I believe we shall view people as capable of growth and change, and that autonomy is one of the defining values of being human.
