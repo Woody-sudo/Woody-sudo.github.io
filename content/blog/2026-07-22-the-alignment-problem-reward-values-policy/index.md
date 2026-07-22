@@ -205,4 +205,4 @@ More capable optimization will put more pressure on every assumption hidden insi
 1. [Alan Turing, "Computing Machinery and Intelligence" (1950).](https://doi.org/10.1093/mind/LIX.236.433)
 2. [Brian Christian, *The Alignment Problem: Machine Learning and Human Values*.](https://brianchristian.org/the-alignment-problem/)
 3. [Richard Sutton and Andrew Barto, *Reinforcement Learning: An Introduction*.](http://incompleteideas.net/book/the-book-2nd.html)
-4. [Person of Interst Wiki](https://personofinterest.fandom.com/)
+4. [Person of Interest Wiki](https://personofinterest.fandom.com/)
