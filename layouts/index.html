@@ -106,8 +106,46 @@
       <div class="section-label">Selected research</div>
       <div class="section-content">
         <article class="project">
+          <p class="meta">Independent research · 2026</p>
+          <h2 id="research-title">Validation Geometry for Reward Optimization under Proxy Misspecification</h2>
+          <p>A finite validation protocol can miss precisely the proxy errors that an optimizer amplifies. This project develops an optimizer-conditioned geometry for certifying a specified reward-optimization endpoint.</p>
+
+          <div class="resource-links" aria-label="Validation geometry project resources">
+            <a class="button" href="assets/docs/validation-geometry-paper.pdf">Paper (PDF)</a>
+            <a href="assets/docs/validation-geometry-one-sheet.pdf">One-sheet (PDF)</a>
+          </div>
+
+          <figure class="method-overview">
+            <img
+              src="assets/images/validation-geometry-overview.png"
+              width="1040"
+              height="340"
+              loading="lazy"
+              decoding="async"
+              alt="Validation geometry diagram showing optimizer sensitivity decomposed into measured and validation-invisible components, with the invisible projection determining sharp worst-case proxy bias."
+            >
+            <figcaption>Finite validation controls only the component of optimizer sensitivity inside its measured subspace; the orthogonal component determines the sharp undetectable bias.</figcaption>
+          </figure>
+
+          <dl class="project-facts">
+            <div>
+              <dt>Core result</dt>
+              <dd>For any fixed optimizer endpoint, the centered density ratio relative to the reference distribution is the exact sensitivity direction for proxy overstatement.</dd>
+            </div>
+            <div>
+              <dt>Design insight</dt>
+              <dd>Average risk, restricted worst-case coverage, and feasible measurement selection require distinct validation-design objectives.</dd>
+            </div>
+            <div>
+              <dt>Evidence and scope</dt>
+              <dd>Experiments verify sharp kernel witnesses, identifiability transitions, noisy certificates, and transfer failures under shifted or unseen optimizer directions. The result certifies a declared endpoint rather than universal safety.</dd>
+            </div>
+          </dl>
+        </article>
+
+        <article class="project">
           <p class="meta">Independent coursework project · 2026</p>
-          <h2 id="research-title">Diffusion, Flow Matching, and CRH-CFG</h2>
+          <h2>Diffusion, Flow Matching, and CRH-CFG</h2>
           <p>I independently completed the publicly available coursework and assignments from CMU 10-799, Diffusion and Flow Matching.</p>
 
           <div class="resource-links" aria-label="Project resources">
@@ -241,7 +279,7 @@
 
     <footer class="site-footer">
       <p>Chen Mu · Physics / AI / Physics Inspired AI System</p>
-      <p>Last updated July 2026</p>
+      <p>Last updated August 2026</p>
     </footer>
   </div>
 </body>

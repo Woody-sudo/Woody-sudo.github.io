@@ -366,6 +366,12 @@ p { margin: 0 0 12px; }
 
 .project > .meta { margin-bottom: 8px; }
 
+.project + .project {
+  margin-top: 46px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+}
+
 .method-overview {
   margin: 24px 0 0;
 }
