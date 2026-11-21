@@ -6,7 +6,7 @@
   <meta name="description" content="Chen Mu is a physics undergraduate interested in generative models and reliable, low-latency 3D/4D vision from sparse visual observations.">
   <meta name="theme-color" content="#f7f6f2">
   <meta property="og:title" content="Chen Mu — Generative Models & 3D/4D Vision">
-  <meta property="og:description" content="Research portfolio focused on dynamic scene reconstruction, uncertainty-aware correction, and accuracy-latency tradeoffs in visual systems.">
+  <meta property="og:description" content="Chen Mu’s research interests, blog, and background in physics, generative models, and 3D/4D vision.">
   <meta property="og:type" content="website">
   <title>Chen Mu — Generative Models & 3D/4D Vision</title>
   <script>
@@ -44,8 +44,6 @@
         <a class="site-name" href="#top">Chen Mu</a>
         <div class="header-actions">
           <nav aria-label="Primary navigation">
-            <a href="#research">Research</a>
-            <a href="#modeling">Modeling</a>
             <a href="#profile">Profile</a>
             <a href="{{ "/blog/" | relURL }}">Blog</a>
             <a href="#contact">Contact</a>
@@ -105,114 +103,6 @@
           <li><strong>Simulation under explicit accuracy-latency constraints:</strong> adapting fidelity, update frequency, and correction depth to uncertainty and the available response time.</li>
           <li><strong>Plausible generation with an accompanying validation mechanism:</strong> checking generated objects or sequences against the input, geometry, and dynamics, then refining only the parts that need correction.</li>
         </ul>
-      </div>
-    </section>
-
-    <section class="section" id="research" aria-labelledby="research-title">
-      <div class="section-label">Selected research</div>
-      <div class="section-content">
-        <article class="project">
-          <p class="meta">Independent research · 2026</p>
-          <h2 id="research-title">Validation Geometry for Reward Optimization under Proxy Misspecification</h2>
-          <p>A finite validation protocol can miss precisely the proxy errors that an optimizer amplifies. This project develops an optimizer-conditioned geometry for certifying a specified reward-optimization endpoint.</p>
-
-          <div class="resource-links" aria-label="Validation geometry project resources">
-            <a class="button" href="assets/docs/validation-geometry-paper.pdf">Paper (PDF)</a>
-            <a href="assets/docs/validation-geometry-one-sheet.pdf">One-sheet (PDF)</a>
-          </div>
-
-          <figure class="method-overview">
-            <img
-              src="assets/images/validation-geometry-overview.png"
-              width="1040"
-              height="340"
-              loading="lazy"
-              decoding="async"
-              alt="Validation geometry diagram showing optimizer sensitivity decomposed into measured and validation-invisible components, with the invisible projection determining sharp worst-case proxy bias."
-            >
-            <figcaption>Finite validation controls only the component of optimizer sensitivity inside its measured subspace; the orthogonal component determines the sharp undetectable bias.</figcaption>
-          </figure>
-
-          <dl class="project-facts">
-            <div>
-              <dt>Core result</dt>
-              <dd>For any fixed optimizer endpoint, the centered density ratio relative to the reference distribution is the exact sensitivity direction for proxy overstatement.</dd>
-            </div>
-            <div>
-              <dt>Design insight</dt>
-              <dd>Average risk, restricted worst-case coverage, and feasible measurement selection require distinct validation-design objectives.</dd>
-            </div>
-            <div>
-              <dt>Evidence and scope</dt>
-              <dd>Experiments verify sharp kernel witnesses, identifiability transitions, noisy certificates, and transfer failures under shifted or unseen optimizer directions. The result certifies a declared endpoint rather than universal safety.</dd>
-            </div>
-          </dl>
-        </article>
-
-        <article class="project">
-          <p class="meta">Independent coursework project · 2026</p>
-          <h2>Diffusion, Flow Matching, and CRH-CFG</h2>
-          <p>I independently completed the publicly available coursework and assignments from CMU 10-799, Diffusion and Flow Matching.</p>
-
-          <div class="resource-links" aria-label="Project resources">
-            <a class="button" href="assets/docs/crh-cfg-poster.pdf">Poster (PDF)</a>
-            <a href="assets/docs/crh-cfg-paper.pdf">Paper (PDF)</a>
-            <a href="https://github.com/Woody-sudo/crh-cfg-flow-matching">Code / repository</a>
-          </div>
-
-          <figure class="method-overview">
-            <img
-              src="assets/images/crh-cfg-method-overview.webp"
-              width="1727"
-              height="928"
-              loading="lazy"
-              decoding="async"
-              alt="CRH-CFG architecture: a reliability gate chooses between bypass and a constrained search over classifier-free guidance scales, followed by Heun predictor-corrector execution and receding-horizon replanning."
-            >
-            <figcaption>CRH-CFG performs training-free, inference-time search and control over classifier-free guidance scales.</figcaption>
-          </figure>
-
-          <dl class="project-facts">
-            <div>
-              <dt>Implemented</dt>
-              <dd>DDPM, straight-path Flow Matching, DDIM, Euler and Heun samplers, and conditional classifier-free guidance.</dd>
-            </div>
-            <div>
-              <dt>Experiment setting</dt>
-              <dd>CelebA 64×64; Modal L40S; independent ResNet-18 evaluator.</dd>
-            </div>
-            <div>
-              <dt>Abstract</dt>
-              <dd>CRH-CFG adapts classifier-free guidance online through constrained receding-horizon search, reusing frozen conditional and unconditional fields without extra generator evaluations. On CelebA, it modestly improves target adherence at low overhead; preservation and conditional-quality gains are not yet supported.</dd>
-            </div>
-          </dl>
-
-          <p class="disclosure"><strong>Engineering disclosure:</strong> Codex assisted engineering; I retained research design, interpretation, and validation.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="modeling" aria-labelledby="modeling-title">
-      <div class="section-label">Scientific modeling</div>
-      <div class="section-content">
-        <h2 id="modeling-title">Physics and research engineering projects</h2>
-        <div class="work-list">
-          <article>
-            <h3>Darcy-coupled tumor drug transport</h3>
-            <p>A Mathematica finite-element framework coupling Darcy flow with convection–diffusion–reaction transport for intratumoral drug simulation.</p>
-            <a href="assets/docs/darcy-tumor-transport-paper.pdf">Read project paper (PDF)</a>
-          </article>
-          <article>
-            <h3>Bird-vocalization acoustic features</h3>
-            <p>An automated acoustic feature-extraction workflow developed around bird-vocalization data from the Shenzhen–Hong Kong border.</p>
-            <a href="assets/docs/bird-acoustic-feature-paper.pdf">Read project paper (PDF)</a>
-          </article>
-          <article>
-            <h3>Mathematica-based agent harness</h3>
-            <p>Research engineering for AI-assisted scientific workflows, connecting symbolic computation, experiment execution, and auditable outputs.</p>
-            <span class="status">Private repository</span>
-          </article>
-        </div>
       </div>
     </section>
 
@@ -284,7 +174,7 @@
 
     <footer class="site-footer">
       <p>Chen Mu · Physics / Generative Models / 3D/4D Vision</p>
-      <p>Last updated August 2026</p>
+      <p>Last updated November 2026</p>
     </footer>
   </div>
 </body>
